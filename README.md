@@ -2,9 +2,9 @@
 
 > Schrap hierboven wat niet past
 
-- Student: VOORNAAM NAAM
-- Studentennummer: xxxxxxxxx
-- E-mailadres: voornaam.naam@student.hogent.be
+- Student: Alexander Schatteman
+- Studentennummer: 202182201
+- E-mailadres: Alexander.Schatteman@student.hogent.be
 
 ## Vereisten
 
@@ -20,7 +20,6 @@ Ik verwacht dat volgende software reeds geïnstalleerd is:
 ## Opstarten
 
 > Schrijf hier hoe we de applicatie starten (.env bestanden aanmaken, commando's om uit te voeren...)
-
 
 ## Testen
 
