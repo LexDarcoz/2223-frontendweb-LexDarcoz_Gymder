@@ -1,0 +1,27 @@
+#myTab {
+  margin: 0 auto;
+
+  border-radius: 30px;
+  font-family: "Trirong", serif;
+  font-size: 20px;
+}
+.nav-link {
+  color: #deca7e;
+}
+#logoTopLeft {
+  width: 180px;
+  height: 167px;
+  margin: 0;
+  padding: 0;
+}
+#navbar {
+  text-align: center;
+  padding: auto;
+
+  height: 173px;
+  background: linear-gradient(
+    0deg,
+    rgba(21, 21, 21, 0.3258286741214057) 42%,
+    rgba(130, 130, 130, 0.19483825878594252) 96%
+  );
+}
