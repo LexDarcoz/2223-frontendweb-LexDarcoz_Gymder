@@ -15,7 +15,7 @@ export default function Navbar() {
               className="nav-link "
               id="home-tab"
               data-toggle="tab"
-              href="MyGymPlace"
+              href="/"
               role="tab"
               aria-controls="home"
               aria-selected="true"
@@ -28,7 +28,7 @@ export default function Navbar() {
               className="nav-link "
               id="home-tab"
               data-toggle="tab"
-              href="Equipment"
+              href="apparaten"
               role="tab"
               aria-controls="home"
               aria-selected="true"
@@ -41,7 +41,7 @@ export default function Navbar() {
               className="nav-link"
               id="contact-tab"
               data-toggle="tab"
-              href="contact"
+              href="locaties"
               role="tab"
               aria-controls="contact"
               aria-selected="false"
@@ -54,7 +54,7 @@ export default function Navbar() {
               className="nav-link"
               id="profile-tab"
               data-toggle="tab"
-              href="MyProfile"
+              href="myProfile"
               role="tab"
               aria-controls="profile"
               aria-selected="false"
@@ -82,12 +82,25 @@ export default function Navbar() {
               className="nav-link "
               id="register"
               data-toggle="tab"
-              href="Equipment"
+              href="register"
               role="tab"
               aria-controls="home"
               aria-selected="true"
             >
               Registreren
+            </a>
+          </li>
+          <li className="nav-item">
+            <a
+              className="nav-link "
+              id="Login"
+              data-toggle="tab"
+              href="login"
+              role="tab"
+              aria-controls="home"
+              aria-selected="true"
+            >
+              Login
             </a>
           </li>
         </ul>

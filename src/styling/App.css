@@ -13,6 +13,7 @@
   height: 167px;
   margin: 0;
   padding: 0;
+  border-radius: 10px;
 }
 #navbar {
   text-align: center;
@@ -24,4 +25,8 @@
     rgba(21, 21, 21, 0.3258286741214057) 42%,
     rgba(130, 130, 130, 0.19483825878594252) 96%
   );
+}
+#calendar {
+  float: right;
+  margin-top: 0;
 }

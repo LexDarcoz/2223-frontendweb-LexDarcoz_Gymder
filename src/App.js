@@ -12,10 +12,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route index element={<MyGymPlace />} />
-        <Route path="Locations" element={<Locations />} />
-        <Route path="Equipment" element={<Equipment />} />
-        <Route path="Contact" element={<Contact />} />
-        <Route path="MyProfile" element={<MyProfile />} />
+        <Route path="locations" element={<Locations />} />
+        <Route path="equipment" element={<Equipment />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="myProfile" element={<MyProfile />} />
       </Routes>
     </>
   );
