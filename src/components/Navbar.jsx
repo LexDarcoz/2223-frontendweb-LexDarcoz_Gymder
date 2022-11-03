@@ -1,118 +1,70 @@
 import "bootstrap/dist/css/bootstrap.css";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-light " id="navbar">
-        <img
-          id="logoTopLeft"
-          src={require("../images/GymderLogo.jpg")}
-          alt="Gymder logo"
-        />
+      <nav
+        className="navbar navbar-expand-lg navbar-light navbar-collapse "
+        id="navbar"
+      >
+        <Link to="/" className="nav-link ">
+          <img
+            id="logoTopLeft"
+            src={require("../images/GymderLogo.jpg")}
+            alt="Gymder logo"
+          />
+        </Link>
+
         <ul className="nav nav-tabs" id="myTab" role="tablist">
           <li className="nav-item">
-            <a
-              className="nav-link "
-              id="home-tab"
-              data-toggle="tab"
-              href="/"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
+            <Link to="/" className="nav-link ">
               My Gym
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link "
-              id="home-tab"
-              data-toggle="tab"
-              href="apparaten"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
+            <Link to="/apparaten" className="nav-link ">
               Apparaten
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              id="contact-tab"
-              data-toggle="tab"
-              href="locaties"
-              role="tab"
-              aria-controls="contact"
-              aria-selected="false"
-            >
+            <Link to="/locaties" className="nav-link ">
               Locaties
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link"
-              id="profile-tab"
-              data-toggle="tab"
-              href="myProfile"
-              role="tab"
-              aria-controls="profile"
-              aria-selected="false"
-            >
-              Mijn profiel
-            </a>
-          </li>
-          <li className="nav-item">
-            <a
-              className="nav-link"
-              id="contact-tab"
-              data-toggle="tab"
-              href="contact"
-              role="tab"
-              aria-controls="contact"
-              aria-selected="false"
-            >
+            <Link to="/contact" className="nav-link ">
               Contacteer ons!
-            </a>
-          </li>
-        </ul>
-        <ul>
-          <li className="nav-item">
-            <a
-              className="nav-link "
-              id="register"
-              data-toggle="tab"
-              href="register"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
-              Registreren
-            </a>
+            </Link>
           </li>
           <li className="nav-item">
-            <a
-              className="nav-link "
-              id="Login"
-              data-toggle="tab"
-              href="login"
-              role="tab"
-              aria-controls="home"
-              aria-selected="true"
-            >
+            <Link to="/register" className="nav-link regin">
+              Register
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/login" className="nav-link regin">
               Login
-            </a>
+            </Link>
           </li>
         </ul>
+        <Link to="myProfile">
+          <span
+            className="glyphicon glyphicon-user me-5"
+            style={{
+              fontSize: "25px",
+              color: "#ecdf8f",
+            }}
+          ></span>
+        </Link>
 
-        <div className="tab-content" id="myTabContent">
+        {/* <div className="tab-content" id="myTabContent">
           <div
             className="tab-pane fade show active"
             id="home"
             role="tabpanel"
             aria-labelledby="home-tab"
           ></div>
-
           <div
             className="tab-pane fade"
             id="profile"
@@ -125,7 +77,7 @@ export default function Navbar() {
             role="tabpanel"
             aria-labelledby="contact-tab"
           ></div>
-        </div>
+        </div> */}
       </nav>
     </>
   );

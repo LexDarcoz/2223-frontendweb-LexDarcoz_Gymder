@@ -1,11 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import Locations from "./components/Locations";
+import Locations from "./pages/location/Locations";
 import Navbar from "./components/Navbar";
-import Contact from "./components/Contact";
-import Equipment from "./components/Equipment";
-import MyGymPlace from "./components/MyGymPlace";
+import Contact from "./pages/contact/Contact";
+import Equipment from "./pages/Equipment";
+import MyGymPlace from "./pages/MyGymPlace";
+import MyProfile from "./pages/MyProfile";
 import "./styling/App.css";
-import MyProfile from "./components/MyProfile";
+import Form from "./pages/login";
 function App() {
   return (
     <>
@@ -13,9 +14,10 @@ function App() {
       <Routes>
         <Route index element={<MyGymPlace />} />
         <Route path="locations" element={<Locations />} />
-        <Route path="equipment" element={<Equipment />} />
+        <Route path="apparaten" element={<Equipment />} />
         <Route path="contact" element={<Contact />} />
         <Route path="myProfile" element={<MyProfile />} />
+        {/* <Route path="login" element={<Form />} /> */}
       </Routes>
     </>
   );
