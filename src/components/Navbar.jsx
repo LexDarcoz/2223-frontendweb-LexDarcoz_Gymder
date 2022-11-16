@@ -3,82 +3,53 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <>
-      <nav
-        className="navbar navbar-expand-lg navbar-light navbar-collapse "
-        id="navbar"
-      >
-        <Link to="/" className="nav-link ">
-          <img
-            id="logoTopLeft"
-            src={require("../images/GymderLogo.jpg")}
-            alt="Gymder logo"
-          />
+    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+      <div className="container">
+        <Link className="navbar-brand" to="#">
+          <span className="text-warning">Gym</span>Der
         </Link>
+        <button
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          className="navbar-toggler"
+          data-bs-target="#navbarSupportedContent"
+          data-bs-toggle="collapse"
+          type="button"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a href="/#" className="nav-link">
+                Home
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/#about">
+                About
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/#services">
+                Services
+              </a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/#portfolio">
+                Portfolio
+              </a>
+            </li>
 
-        <ul className="nav nav-tabs" id="myTab" role="tablist">
-          <li className="nav-item">
-            <Link to="/" className="nav-link ">
-              My Gym
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/apparaten" className="nav-link ">
-              Apparaten
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/locaties" className="nav-link ">
-              Locaties
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/contact" className="nav-link ">
-              Contacteer ons!
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/register" className="nav-link regin">
-              Register
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/login" className="nav-link regin">
-              Login
-            </Link>
-          </li>
-        </ul>
-        <Link to="myProfile">
-          <span
-            className="glyphicon glyphicon-user me-5"
-            style={{
-              fontSize: "25px",
-              color: "#ecdf8f",
-            }}
-          ></span>
-        </Link>
-
-        {/* <div className="tab-content" id="myTabContent">
-          <div
-            className="tab-pane fade show active"
-            id="home"
-            role="tabpanel"
-            aria-labelledby="home-tab"
-          ></div>
-          <div
-            className="tab-pane fade"
-            id="profile"
-            role="tabpanel"
-            aria-labelledby="profile-tab"
-          ></div>
-          <div
-            className="tab-pane fade bg-light"
-            id="contact"
-            role="tabpanel"
-            aria-labelledby="contact-tab"
-          ></div>
-        </div> */}
-      </nav>
-    </>
+            <li className="nav-item">
+              <a className="nav-link" href="/#contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
   );
 }
