@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <div className="container">
-        <Link className="navbar-brand" to="#">
+        <Link className="navbar-brand" to="/#">
           <span className="text-warning">Gym</span>Der
         </Link>
         <button

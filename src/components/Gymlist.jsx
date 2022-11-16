@@ -5,7 +5,7 @@ export default function Gymlist() {
         <div className="row">
           <div className="col-md-12">
             <div className="section-header text-center pb-5">
-              <h2>Our Features</h2>
+              <h2>Top 3 gyms</h2>
             </div>
           </div>
         </div>

@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import CarouselImg1 from "../images/Carousel1.jpeg";
+import CarouselImg2 from "../images/Carousel2.jpeg";
+import CarouselImg3 from "../images/Carousel3.jpeg";
 
 export default function Carousel() {
   return (
@@ -30,13 +33,10 @@ export default function Carousel() {
       </div>
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <img alt="..." className="d-block w-100" src="img/home-1.jpg" />
+          <img alt="..." className="d-block w-100" src={CarouselImg2} />
           <div className="carousel-caption">
             <h5>Your Gym</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-              nulla, tempore. Deserunt excepturi quas vero.
-            </p>
+            <p>Setup a routine of exercises and meet other people!</p>
             <p>
               <Link className="btn btn-warning mt-3" to="/register">
                 Make your account today!
@@ -45,32 +45,29 @@ export default function Carousel() {
           </div>
         </div>
         <div className="carousel-item">
-          <img alt="..." className="d-block w-100" src="img/home-2.jpg" />
+          <img alt="..." className="d-block w-100" src={CarouselImg3} />
           <div className="carousel-caption">
-            <h5>Always Dedicated</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
-              nulla, tempore. Deserunt excepturi quas vero.
-            </p>
+            <h5>Gym in your area</h5>
+            <p>You can add gyms which will be available for others to see.</p>
             <p>
               <a className="btn btn-warning mt-3" href="#">
-                Learn More
+                Add your gym!
               </a>
             </p>
           </div>
         </div>
         <div className="carousel-item">
-          <img alt="..." className="d-block w-100" src="img/home-3.jpg" />
+          <img alt="..." className="d-block w-100" src={CarouselImg1} />
           <div className="carousel-caption">
-            <h5>True Construction</h5>
+            <h5>Socializing with people from around you!</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
               nulla, tempore. Deserunt excepturi quas vero.
             </p>
             <p>
-              <a className="btn btn-warning mt-3" href="#">
+              <Link className="btn btn-warning mt-3" href="#">
                 Learn More
-              </a>
+              </Link>
             </p>
           </div>
         </div>

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Contact() {
   return (
     <section className="contact section-padding" id="contact">
@@ -7,9 +9,10 @@ export default function Contact() {
             <div className="section-header text-center pb-5">
               <h2>Contact Us</h2>
               <p>
-                Alexander.Schatteman@student.hogent.be
-                <br />
-                0485474878 (not real phonenumber)
+                <Link to="/contactForm">
+                  Alexander.Schatteman@student.hogent.be
+                </Link>
+                <br />+ 0485 47 48 78 (not real phonenumber)
               </p>
             </div>
           </div>

@@ -35,6 +35,10 @@
 .navbar ul.nav li:hover a {
   color: #000;
 }
+#contact-form {
+  margin: 0 auto;
+  width: 650px;
+}
 
 body {
   font-size: 1.5em;

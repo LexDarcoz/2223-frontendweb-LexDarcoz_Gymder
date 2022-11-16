@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Locations from "./pages/Locations";
 import Navbar from "./components/Navbar";
-import Contact from "./pages/Contact";
+import ContactForm from "./pages/ContactForm";
 import Equipment from "./pages/Equipment";
 import MyGym from "./pages/MyGym";
 import MyProfile from "./pages/MyProfile";
@@ -18,12 +18,11 @@ function App() {
         <Route index element={<MyGym />} />
         <Route path="locations" element={<Locations />} />
         <Route path="apparaten" element={<Equipment />} />
-        <Route path="contact" element={<Contact />} />
+        <Route path="contactForm" element={<ContactForm />} />
         <Route path="myProfile" element={<MyProfile />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
-        {/* <Route path="login" element={<Form />} /> */}
       </Routes>
       <Footer />
     </>
