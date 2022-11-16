@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import GymderLogo from "../images/GymderLogo.jpg";
 
 export default function About() {
   return (
@@ -7,7 +8,7 @@ export default function About() {
         <div className="row">
           <div className="col-lg-4 col-md-12 col-12">
             <div className="about-img">
-              <img alt="" className="img-fluid" src="img/about.jpg" />
+              <img alt="Gymder logo" className="img-fluid" src={GymderLogo} />
             </div>
           </div>
           <div className="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">

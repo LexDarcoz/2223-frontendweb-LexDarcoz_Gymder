@@ -11,7 +11,7 @@ export default function ContactForm() {
         help you.
       </p>
 
-      <div className="row mx-auto">
+      <div className="row ">
         <div className="col-md-9 mb-md-0 mb-5 ">
           <form
             id="contact-form"

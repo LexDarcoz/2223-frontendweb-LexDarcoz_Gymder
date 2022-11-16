@@ -8,7 +8,7 @@ import MyProfile from "./pages/MyProfile";
 import "./styling/App.css";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
-import Login from "./pages/Login";
+import Login from "./pages/login";
 import Footer from "./components/Footer";
 function App() {
   return (
