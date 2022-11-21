@@ -90,9 +90,9 @@ export default function Gymlist() {
                   Sequi ipsam nostrum illo tempora esse quibusdam.
                 </p>
                 <p className="socials">
-                  <i className="bi bi-twitter text-dark mx-1"></i>{" "}
-                  <i className="bi bi-facebook text-dark mx-1"></i>{" "}
-                  <i className="bi bi-linkedin text-dark mx-1"></i>{" "}
+                  <i className="bi bi-twitter text-dark mx-1"></i>
+                  <i className="bi bi-facebook text-dark mx-1"></i>
+                  <i className="bi bi-linkedin text-dark mx-1"></i>
                   <i className="bi bi-instagram text-dark mx-1"></i>
                 </p>
               </div>

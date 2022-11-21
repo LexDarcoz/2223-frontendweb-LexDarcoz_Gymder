@@ -8,8 +8,9 @@ import MyProfile from "./pages/MyProfile";
 import "./styling/App.css";
 import NotFound from "./pages/NotFound";
 import Register from "./pages/Register";
-import Login from "./pages/login";
+import Login from "./pages/Login";
 import Footer from "./components/Footer";
+import AddGym from "./pages/AddGym";
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
         <Route path="myProfile" element={<MyProfile />} />
         <Route path="register" element={<Register />} />
         <Route path="login" element={<Login />} />
+        <Route path="addGym" element={<AddGym />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

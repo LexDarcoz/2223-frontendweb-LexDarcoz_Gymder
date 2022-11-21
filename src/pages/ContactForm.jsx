@@ -1,6 +1,6 @@
 export default function ContactForm() {
   return (
-    <section className="mb-12 mt-4 section-padding " id="ContactForm">
+    <section className="mb-12 mt-4 section-padding vh-100" id="ContactForm">
       <h2 className="h1-responsive font-weight-bold text-center my-4">
         Contact us
       </h2>

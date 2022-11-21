@@ -50,9 +50,9 @@ export default function Carousel() {
             <h5>Gym in your area</h5>
             <p>You can add gyms which will be available for others to see.</p>
             <p>
-              <a className="btn btn-warning mt-3" href="#">
-                Add your gym!
-              </a>
+              <Link to="addGym" className="btn btn-warning">
+                Add your gym now!
+              </Link>
             </p>
           </div>
         </div>
