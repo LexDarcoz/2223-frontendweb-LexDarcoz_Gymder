@@ -19,11 +19,10 @@ export default function AddGym() {
   // }
 
   return (
-    <section class="vh-100">
-      <div className="container h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-xl-12 col-xl-11"></div>
-        </div>
+    <section className="container pt-5">
+      <div className="row">
+        <div className="col-sm-12 col-md-6">test 1 </div>
+        <div className="col-sm-12 col-md-6">test 2 </div>
       </div>
     </section>
   );
