@@ -1,10 +1,13 @@
 export default function Register() {
   return (
-    <section class="vh-100" style={{ backgroundcolor: " #eee" }}>
+    <section class="vh-100 under-Navbar" style={{ backgroundcolor: " #eee" }}>
       <div class="container h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
           <div class="col-lg-12 col-xl-11">
-            <div class="card text-black" style={{ borderradius: "25px" }}>
+            <div
+              class="text-white bg-dark bg-gradient"
+              style={{ borderRadius: "15px" }}
+            >
               <div class="card-body p-md-5">
                 <div class="row justify-content-center">
                   <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
@@ -77,13 +80,13 @@ export default function Register() {
                           type="checkbox"
                           value=""
                           id="form2Example3c"
+                          required
                         />
                         <label class="form-check-label" for="form2Example3">
                           I agree all statements in{" "}
                           <a href="#!">Terms of service</a>
                         </label>
                       </div>
-
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button type="submit" class="btn btn-primary btn-lg">
                           Register

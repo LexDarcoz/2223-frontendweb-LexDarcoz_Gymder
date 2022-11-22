@@ -147,6 +147,9 @@ body {
   .img-area img {
     width: 100%;
   }
+  .under-Navbar {
+    margin-top: 100px;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -171,15 +174,18 @@ body {
   .about-text {
     padding-top: 50px;
   }
+
   .card {
     margin-bottom: 30px;
+  }
+  .under-Navbar {
+    margin-top: 100px;
   }
 }
 .carousel-indicators {
   width: 1120px;
   margin: 0 auto;
 }
-
-.under-Navbar {
-  margin-top: 100px;
+.img-fluid {
+  border-radius: 40px;
 }
