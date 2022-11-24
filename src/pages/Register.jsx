@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Register() {
   return (
     <section class="vh-100 under-Navbar" style={{ backgroundcolor: " #eee" }}>
@@ -74,23 +76,19 @@ export default function Register() {
                         </div>
                       </div>
 
-                      <div class="form-check d-flex justify-content-center mb-5">
-                        <input
-                          class="form-check-input me-2"
-                          type="checkbox"
-                          value=""
-                          id="form2Example3c"
-                          required
-                        />
-                        <label class="form-check-label" for="form2Example3">
-                          I agree all statements in{" "}
-                          <a href="#!">Terms of service</a>
-                        </label>
-                      </div>
-                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="submit" class="btn btn-primary btn-lg">
-                          Register
-                        </button>
+                      <div class="row d-flex">
+                        <div className="d-flex">
+                          <button
+                            type="submit"
+                            className="align-self-end btn btn-primary btn-lg"
+                          >
+                            Register
+                          </button>
+
+                          <Link to="/login" className="m-lg-auto">
+                            I already have an account
+                          </Link>
+                        </div>
                       </div>
                     </form>
                   </div>
