@@ -1,22 +1,14 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import smallGymImg from "../images/SmallGym.jpeg";
-export default function AddGym() {
-  // let [state, setState] = useState({
-  //   gym1: {
-  //     id: "Bin chilling",
-  //     name: "Stamina Fitness",
-  //     rating: 4,
-  //   },
-  // });
+import smallGymImg from "../../images/SmallGym.jpeg";
 
-  // function addGym() {
-  //   setState = {
-  //     gym2: {
-  //       name: "Stamina2",
-  //     },
-  //   };
-  // }
+import gymList from "../../api/mock_data/Gyms_DATA";
+export default function AddGym() {
+  const [gymList, setGymList] = useState(gymList[0]);
+
+  function addGym() {
+    setGymList([...gymList, { name: "yes" }]);
+  }
 
   return (
     <section class="vh-100 under-Navbar" style={{ backgroundcolor: " #eee" }}>
@@ -126,8 +118,12 @@ export default function AddGym() {
                       </div>
 
                       <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="submit" class="btn btn-primary btn-lg">
-                          Register
+                        <button
+                          type="submit"
+                          onClick={addGym}
+                          class="btn btn-primary btn-lg"
+                        >
+                          Add Gym
                         </button>
                       </div>
                     </form>

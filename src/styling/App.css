@@ -11,6 +11,7 @@
   top: 0;
   z-index: 99999;
   padding: 10px 0;
+  margin-bottom: 0px;
 }
 .navbar .logo {
   font-size: 1.5em;
@@ -147,9 +148,6 @@ body {
   .img-area img {
     width: 100%;
   }
-  .under-Navbar {
-    margin-top: 100px;
-  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -176,10 +174,11 @@ body {
   }
 
   .card {
-    margin-bottom: 30px;
-  }
-  .under-Navbar {
-    margin-top: 100px;
+    margin: 2rem 2rem 2rem 0;
+    padding: 1.5rem;
+    box-shadow: 0 0 28px 4px rgba(0, 0, 0, 1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
   }
 }
 .carousel-indicators {
@@ -188,4 +187,7 @@ body {
 }
 .img-fluid {
   border-radius: 15px;
+}
+#UnderNav {
+  margin-top: 100px;
 }
