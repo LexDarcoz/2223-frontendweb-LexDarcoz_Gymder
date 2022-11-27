@@ -4,7 +4,7 @@ import "./UserCard.css";
 export default function UserCard({ userData }) {
   console.log("why you ghef to be mad");
   return (
-    <div className="card col-12 col-md-12 col-lg-4 mx-auto p-5">
+    <div className="card col-lg-3 col-md-6 col-12 p-3 m-3  ">
       <div className="card_title">
         {userData.name.first} {userData.name.last}
         <div className="card_body">
