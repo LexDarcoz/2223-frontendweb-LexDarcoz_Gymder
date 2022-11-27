@@ -9,7 +9,7 @@ export default function UserList() {
     (async () => {
       let userData;
       try {
-        const response = await fetch("https://randomuser.me/api/?results=10");
+        const response = await fetch("https://randomuser.me/api/?results=12");
         userData = (await response.json()).results;
       } catch (error) {
         console.log(error);
