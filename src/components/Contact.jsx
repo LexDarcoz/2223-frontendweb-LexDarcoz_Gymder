@@ -6,12 +6,13 @@ export default function Contact() {
       <div className="container mt-5 mb-5">
         <div className="row">
           <div className="col-md-12">
-            <div className="section-header text-center pb-5">
+            <div className="section-header row text-center pb-5">
               <h2>Contact Us</h2>
               <p>
                 📧
-                <Link to="/contactForm">
-                  Alexander.Schatteman@student.hogent.be
+                <Link to="/contactForm" className="text-center">
+                  Alexander.Schatteman <br />
+                  @student.hogent.be
                 </Link>
                 <br />
                 📞0485 47 48 78
