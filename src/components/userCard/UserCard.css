@@ -1,0 +1,28 @@
+.card {
+  margin: 2rem 2rem 2rem 0;
+  padding: 1.5rem;
+  box-shadow: 0 0 1px 0px rgba(0, 0, 0, 1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 28px 4px rgba(0, 0, 0, 1);
+}
+
+.card_title {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.card_image {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_image_img {
+  border-radius: 50%;
+}
+.card_body {
+  font-weight: normal;
+}

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import smallGymImg from "../images/SmallGym.jpeg";
+import smallGymImg from "../../images/SmallGym.jpeg";
 export default function login() {
   return (
     <>

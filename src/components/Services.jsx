@@ -19,12 +19,14 @@ export default function Services() {
             <div className="card text-white text-center bg-dark pb-2">
               <div className="card-body">
                 <i className="bi bi-laptop"></i>
-                <h3 className="card-title">Best Quality</h3>
+                <h3 className="card-title">Chat with other gym rats!</h3>
                 <p className="lead">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci eligendi modi temporibus alias iste. Accusantium?
+                  Gymder provides the ability to chat with people who have added
+                  eachother, this is via firebase.
                 </p>
-                <button className="btn bg-warning text-dark">Read More</button>
+                <button className="btn bg-warning text-dark">
+                  Check it out!
+                </button>
               </div>
             </div>
           </div>

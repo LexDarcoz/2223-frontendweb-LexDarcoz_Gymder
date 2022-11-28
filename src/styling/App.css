@@ -11,6 +11,7 @@
   top: 0;
   z-index: 99999;
   padding: 10px 0;
+  margin-bottom: 0px;
 }
 .navbar .logo {
   font-size: 1.5em;
@@ -147,39 +148,24 @@ body {
   .img-area img {
     width: 100%;
   }
-  .under-Navbar {
-    margin-top: 100px;
-  }
 }
 
 @media only screen and (max-width: 767px) {
   .navbar-nav {
     text-align: center;
   }
-  .carousel-caption {
-    bottom: 125px;
-  }
-  .carousel-caption h5 {
-    font-size: 17px;
-  }
-  .carousel-caption a {
-    padding: 10px 15px;
-    font-size: 15px;
-  }
+
   .carousel-caption p {
     width: 100%;
     line-height: 1.6;
     font-size: 12px;
   }
-  .about-text {
-    padding-top: 50px;
-  }
-
   .card {
-    margin-bottom: 30px;
-  }
-  .under-Navbar {
-    margin-top: 100px;
+    margin: 2rem 2rem 2rem 0;
+    padding: 1.5rem;
+    box-shadow: 0 0 28px 4px rgba(0, 0, 0, 1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
   }
 }
 .carousel-indicators {
@@ -187,4 +173,7 @@ body {
 }
 .img-fluid {
   border-radius: 15px;
+}
+#UnderNav {
+  margin-top: 100px;
 }
