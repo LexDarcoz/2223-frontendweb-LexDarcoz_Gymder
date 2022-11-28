@@ -154,25 +154,12 @@ body {
   .navbar-nav {
     text-align: center;
   }
-  .carousel-caption {
-    bottom: 125px;
-  }
-  .carousel-caption h5 {
-    font-size: 17px;
-  }
-  .carousel-caption a {
-    padding: 10px 15px;
-    font-size: 15px;
-  }
+
   .carousel-caption p {
     width: 100%;
     line-height: 1.6;
     font-size: 12px;
   }
-  .about-text {
-    padding-top: 50px;
-  }
-
   .card {
     margin: 2rem 2rem 2rem 0;
     padding: 1.5rem;
@@ -182,7 +169,6 @@ body {
   }
 }
 .carousel-indicators {
-  width: 1120px;
   margin: 0 auto;
 }
 .img-fluid {
