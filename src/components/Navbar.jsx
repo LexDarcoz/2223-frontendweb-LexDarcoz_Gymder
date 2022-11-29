@@ -1,5 +1,6 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { Link, useLocation } from "react-router-dom";
+import AuthenticationButton from "./authentication/AuthenticationButton";
 
 export default function Navbar() {
   const { pathname } = useLocation();
@@ -86,6 +87,9 @@ export default function Navbar() {
               <Link className="nav-link" to="/discover">
                 Discover
               </Link>
+            </li>
+            <li className="nav-item">
+              <AuthenticationButton />
             </li>
           </ul>
         </div>

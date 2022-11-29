@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import LoginButton from "../../components/authentication/LoginButton";
 
 export default function Register() {
   return (
@@ -85,9 +86,10 @@ export default function Register() {
                             Register
                           </button>
 
-                          <Link to="/login" className="m-lg-auto">
+                          <LoginButton />
+                          {/* <Link to="/login" className="m-lg-auto">
                             I already have an account
-                          </Link>
+                          </Link> */}
                         </div>
                       </div>
                     </form>

@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useEffect } from "react";
-const baseUrl = "http://localhost:9000/api/toestel";
+const baseUrl = "http://localhost:9000/api/User";
 
 export const getAll = async () => {
   const { data } = await axios.get(baseUrl);

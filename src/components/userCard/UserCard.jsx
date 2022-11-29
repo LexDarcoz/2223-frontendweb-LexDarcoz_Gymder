@@ -2,7 +2,6 @@ import Location from "../Location/Location";
 import PhoneNumber from "../phoneNumber/PhoneNumber";
 import "./UserCard.css";
 export default function UserCard({ userData }) {
-  console.log("why you ghef to be mad");
   return (
     <div className="card col-lg-3 col-md-6 col-12 p-3 m-3  ">
       <div className="card_title">
