@@ -5,10 +5,10 @@ export default function Contact() {
     <section className="contact section-padding" id="contact">
       <div className="container mt-5 mb-5">
         <div className="row">
-          <div className="col-md-12">
+          <div className="card bg-dark ">
             <div className="section-header row text-center pb-5">
-              <h2>Contact Us</h2>
-              <p>
+              <h2 style={{ color: "#ffc100" }}>Contact Us</h2>
+              <p className="text-white">
                 📧
                 <Link to="/contactForm" className="text-center">
                   Alexander.Schatteman <br />

@@ -88,7 +88,7 @@ export default function Navbar() {
                 Discover
               </Link>
             </li>
-            <li className="nav-item">
+            <li className="nav-item" style={{ marginLeft: "10px" }}>
               <AuthenticationButton prop={""} />
             </li>
           </ul>
