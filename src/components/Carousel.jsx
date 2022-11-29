@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import CarouselImg1 from "../images/Carousel1.jpeg";
 import CarouselImg2 from "../images/Carousel2.jpeg";
 import CarouselImg3 from "../images/Carousel3.jpeg";
+import LoginButton from "./authentication/LoginButton";
 
 export default function Carousel() {
   return (
@@ -38,9 +39,7 @@ export default function Carousel() {
             <h5>Your Gym</h5>
             <p>Setup a routine of exercises and meet other people!</p>
             <p>
-              <Link className="btn btn-warning mt-3" to="/register">
-                Make your account today!
-              </Link>
+              <LoginButton prop={"btn btn-warning"} />
             </p>
           </div>
         </div>

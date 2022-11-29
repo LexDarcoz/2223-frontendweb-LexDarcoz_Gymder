@@ -21,5 +21,5 @@ export default function AuthenticationButton() {
     );
   }
 
-  return <LoginButton />;
+  return <LoginButton prop={"btn btn-primary"} />;
 }

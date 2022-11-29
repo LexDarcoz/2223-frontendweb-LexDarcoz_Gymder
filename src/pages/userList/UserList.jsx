@@ -21,7 +21,7 @@ export default function UserList() {
   }, []);
 
   return (
-    <div id="UnderNav" className="container w-100 h-100">
+    <div id="UnderNav" className="container w-100 min-vh-100 h-100">
       <h1 className="ms-4">User list</h1>
       <div className="row justify-content-center text-center">
         {users.map((user, index) => {
