@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import smallGymImg from "../../images/SmallGym.jpeg";
 
 import gymList from "../../api/mock_data/Gyms_DATA";

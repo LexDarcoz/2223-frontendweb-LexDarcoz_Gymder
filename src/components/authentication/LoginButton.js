@@ -10,7 +10,7 @@ function LoginButton() {
 
   return (
     <button type="button" className="btn btn-primary" onClick={handleLogin}>
-      Log In
+      Join today!
     </button>
   );
 }
