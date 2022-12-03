@@ -53,8 +53,10 @@ export default function Todo() {
                 </div>
                 <h3 className="card-title">Building Make</h3>
                 <p className="lead">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci eligendi modi temporibus alias iste. Accusantium?
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id
+                  corrupti non reprehenderit molestiae maiores dolore. Facilis
+                  nulla perferendis, ipsum reiciendis dolores nobis pariatur nam
+                  aut dolore in, aspernatur expedita odio.
                 </p>
                 <button className="btn bg-warning text-dark">Learn More</button>
               </div>
