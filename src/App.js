@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
 import Locations from "./pages/locations/Locations";
 import Navbar from "./components/Navbar";
 import ContactForm from "./pages/contactForm/ContactForm";
@@ -7,28 +8,38 @@ import MyGym from "./pages/MyGym";
 import MyProfile from "./pages/userProfile/MyProfile";
 import "./styling/App.css";
 import NotFound from "./pages/NotFound";
+import { I18nProvider, LOCALES } from "./Translation/i18n";
 
 import Footer from "./components/Footer";
 import AddGym from "./pages/addGym/AddGym";
+import translate from "./Translation/i18n/translate";
 import UserList from "./pages/userList/UserList";
 function App() {
+  const [locale, setLocale] = useState(LOCALES.ENGLISH);
+
+  function languageFunct(language) {
+    console.log("works!");
+    setLocale(language);
+  }
   return (
     <>
-      <Navbar />
+      <I18nProvider locale={locale}>
+        <Navbar languageFunct={languageFunct} />
 
-      <Routes>
-        <Route index element={<MyGym />} />
+        <Routes>
+          <Route index element={<MyGym />} />
 
-        <Route path="locations" element={<Locations />} />
-        <Route path="apparaten" element={<Equipment />} />
-        <Route path="contactForm" element={<ContactForm />} />
-        <Route path="myProfile" element={<MyProfile />} />
-        <Route path="addGym" element={<AddGym />} />
-        <Route path="discover" element={<UserList />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path="locations" element={<Locations />} />
+          <Route path="apparaten" element={<Equipment />} />
+          <Route path="contactForm" element={<ContactForm />} />
+          <Route path="myProfile" element={<MyProfile />} />
+          <Route path="addGym" element={<AddGym />} />
+          <Route path="discover" element={<UserList />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
 
-      <Footer />
+        <Footer />
+      </I18nProvider>
     </>
   );
 }
