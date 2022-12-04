@@ -3,8 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 import { LOCALES } from "../Translation/i18n";
 import AuthenticationButton from "./authentication/AuthenticationButton";
 
-export default function Navbar(languageFunct) {
+export default function Navbar(props) {
   const { pathname } = useLocation();
+  const { languageFunct } = props;
 
   const path = pathname === "/";
 
@@ -97,17 +98,20 @@ export default function Navbar(languageFunct) {
                 <select>
                   <option
                     value="English"
-                    onClick={languageFunct(LOCALES.ENGLISH)}
+                    onClick={() => languageFunct(LOCALES.ENGLISH)}
                   >
                     English
                   </option>
                   <option
                     value="French"
-                    onClick={languageFunct(LOCALES.FRENCH)}
+                    onClick={() => languageFunct(LOCALES.FRENCH)}
                   >
                     French
                   </option>
-                  <option value="Dutch" onClick={languageFunct(LOCALES.DUTCH)}>
+                  <option
+                    value="Dutch"
+                    onClick={() => languageFunct(LOCALES.DUTCH)}
+                  >
                     Dutch
                   </option>
                 </select>
