@@ -1,3 +1,4 @@
+import Transl from "../Translation/i18n/translate";
 export default function Services() {
   return (
     <section className="services section-padding" id="services">
@@ -5,7 +6,7 @@ export default function Services() {
         <div className="row">
           <div className="col-md-12">
             <div className="section-header text-center pb-5">
-              <h2>Our Services</h2>
+              <h2>{Transl("OurServices")}</h2>
               <p>
                 Lorem ipsum dolor sit amet, consectetur
                 <br />
@@ -19,13 +20,10 @@ export default function Services() {
             <div className="card text-white text-center bg-dark pb-2">
               <div className="card-body">
                 <i className="bi bi-laptop"></i>
-                <h3 className="card-title">Chat with other gym rats!</h3>
-                <p className="lead">
-                  Gymder provides the ability to chat with people who have added
-                  eachother, this is via firebase.
-                </p>
+                <h3 className="card-title">{Transl("AddOthers")}</h3>
+                <p className="lead">{Transl("AddFriendsDiscoverButton")}</p>
                 <button className="btn bg-warning text-dark">
-                  Check it out!
+                  {Transl("CheckItOut")}
                 </button>
               </div>
             </div>

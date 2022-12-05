@@ -1,11 +1,13 @@
+import Transl from "../Translation/i18n/translate";
+
 export default function Gymlist() {
   return (
-    <section className="team section-padding" id="team">
+    <section className="team section-padding" id="ranking">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
             <div className="section-header text-center pb-5">
-              <h2>Top 3 gyms</h2>
+              <h2>{Transl("TopThree")}</h2>
             </div>
           </div>
         </div>

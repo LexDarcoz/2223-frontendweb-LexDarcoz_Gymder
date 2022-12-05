@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import GymderLogo from "../images/GymderLogo.jpg";
-
+import Transl from "../Translation/i18n/translate";
 export default function About() {
   return (
     <section className="about section-padding" id="about">
@@ -14,20 +14,13 @@ export default function About() {
           <div className="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
             <div className="about-text">
               <h2>
-                We Are GymDer
+                {Transl("WeAreGymder")}
                 <br />
-                Providing You Your Gym Assets
+                {Transl("ProvidingGymAssets")}
               </h2>
-              <p>
-                Our mission at Gymder is to motivate people and provide them an
-                easy to use app <br /> to meet other people, find gyms near you
-                and set up a workout plan. <br /> Exercising with a friend is a
-                great way to keep you motivated. It's also a great way to meet
-                new people. <br /> We think it's <strong>crucial</strong> for
-                people to hit the gym for numerous reasons listed below.
-              </p>
+              <p>{Transl("AboutGymder")}</p>
               <Link className="btn btn-warning" to="GymHealth">
-                Learn more
+                {Transl("LearnMore")}
               </Link>
             </div>
           </div>

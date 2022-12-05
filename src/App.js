@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import AddGym from "./pages/addGym/AddGym";
 import translate from "./Translation/i18n/translate";
 import UserList from "./pages/userList/UserList";
+
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
 
@@ -25,7 +26,6 @@ function App() {
     <>
       <I18nProvider locale={locale}>
         <Navbar languageFunct={languageFunct} />
-
         <Routes>
           <Route index element={<MyGym />} />
 

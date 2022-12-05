@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import CarouselImg1 from "../images/Carousel1.jpeg";
 import CarouselImg2 from "../images/Carousel2.jpeg";
 import CarouselImg3 from "../images/Carousel3.jpeg";
+import Transl from "../Translation/i18n/translate";
 import LoginButton from "./authentication/LoginButton";
 
 export default function Carousel() {
@@ -36,8 +37,8 @@ export default function Carousel() {
         <div className="carousel-item active">
           <img alt="..." className="d-block w-100" src={CarouselImg2} />
           <div className="carousel-caption">
-            <h5>Your Gym</h5>
-            <p>Setup a routine of exercises and meet other people!</p>
+            <h5>{Transl("YourGym")}</h5>
+            <p>{Transl("SetupRoutine")}</p>
             <p>
               <LoginButton prop={"btn btn-warning"} />
             </p>
@@ -46,11 +47,11 @@ export default function Carousel() {
         <div className="carousel-item">
           <img alt="..." className="d-block w-100" src={CarouselImg3} />
           <div className="carousel-caption">
-            <h5>Gym in your area</h5>
-            <p>You can add gyms which will be available for others to see.</p>
+            <h5>{Transl("GymInArea")}</h5>
+            <p>{Transl("AddGymsOthersToSee")}</p>
             <p>
               <Link to="addGym" className="btn btn-warning">
-                Add your gym now!
+                {Transl("AddGym")}
               </Link>
             </p>
           </div>
@@ -58,7 +59,7 @@ export default function Carousel() {
         <div className="carousel-item">
           <img alt="..." className="d-block w-100" src={CarouselImg1} />
           <div className="carousel-caption">
-            <h5>Socializing with people from around you!</h5>
+            <h5>{Transl("SocializeWithPeople")}</h5>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime,
               nulla, tempore. Deserunt excepturi quas vero.

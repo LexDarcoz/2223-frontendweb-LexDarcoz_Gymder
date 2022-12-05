@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { Link, useLocation } from "react-router-dom";
 import { LOCALES } from "../Translation/i18n";
+import Transl from "../Translation/i18n/translate";
 import AuthenticationButton from "./authentication/AuthenticationButton";
 
 export default function Navbar(props) {
@@ -14,9 +15,16 @@ export default function Navbar(props) {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <Link className="navbar-brand" to="/#">
-            <span className="text-warning">Gym</span>Der
-          </Link>
+          {path ? (
+            <a className="navbar-brand" href="/#">
+              <span className="text-warning">Gym</span>Der
+            </a>
+          ) : (
+            <Link className="navbar-brand" to="/#">
+              <span className="text-warning">Gym</span>Der
+            </Link>
+          )}
+
           <button
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -33,44 +41,44 @@ export default function Navbar(props) {
               <li className="nav-item">
                 {path ? (
                   <a href="/#" className="nav-link">
-                    Home
+                    {Transl("Home")}
                   </a>
                 ) : (
                   <Link className="nav-link" to="/#contact">
-                    Home
+                    {Transl("Home")}
                   </Link>
                 )}
               </li>
               <li className="nav-item">
                 {path ? (
                   <a className="nav-link" href="/#about">
-                    About
+                    {Transl("About")}
                   </a>
                 ) : (
                   <Link className="nav-link" to="/#contact">
-                    About
+                    {Transl("About")}
                   </Link>
                 )}
               </li>
               <li className="nav-item">
                 {path ? (
                   <a className="nav-link" href="/#services">
-                    Services
+                    {Transl("Services")}
                   </a>
                 ) : (
                   <Link className="nav-link" to="/#contact">
-                    Services
+                    {Transl("Services")}
                   </Link>
                 )}
               </li>
               <li className="nav-item">
                 {path ? (
-                  <a className="nav-link" href="/#portfolio">
-                    Portfolio
+                  <a className="nav-link" href="/#ranking">
+                    {Transl("GymRanking")}
                   </a>
                 ) : (
-                  <Link className="nav-link" to="/#contact">
-                    Portfolio
+                  <Link className="nav-link" to="/#ranking">
+                    {Transl("GymRanking")}
                   </Link>
                 )}
               </li>
@@ -78,17 +86,17 @@ export default function Navbar(props) {
               <li className="nav-item">
                 {path ? (
                   <a className="nav-link" href="/#contact">
-                    Contact
+                    {Transl("Contact")}
                   </a>
                 ) : (
                   <Link className="nav-link" to="/#contact">
-                    Contact
+                    {Transl("Contact")}
                   </Link>
                 )}
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/discover">
-                  Discover
+                  {Transl("Discover")}
                 </Link>
               </li>
               <li className="nav-item" style={{ marginLeft: "10px" }}>
