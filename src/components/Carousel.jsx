@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import CarouselImg1 from "../images/Carousel1.jpeg";
-import CarouselImg2 from "../images/Carousel2.jpeg";
-import CarouselImg3 from "../images/Carousel3.jpeg";
+import CarouselImg1 from "../images/Carousel/Carousel1.jpeg";
+import CarouselImg2 from "../images/Carousel/Carousel2.jpeg";
+import CarouselImg3 from "../images/Carousel/Carousel3.jpeg";
 import Transl from "../Translation/i18n/translate";
 import LoginButton from "./authentication/LoginButton";
 
