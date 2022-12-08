@@ -3,10 +3,9 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 
 export default function AuthenticationButton() {
-  const { isAuthenticated, user } = useAuth0(); // 👈 1
+  const { isAuthenticated, user } = useAuth0();
 
   if (isAuthenticated) {
-    // 👈 2
     const { name, picture, givenName } = user;
     return (
       <div className="d-flex flex-row align-items-center">

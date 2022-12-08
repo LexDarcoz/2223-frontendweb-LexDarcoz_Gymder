@@ -12,14 +12,13 @@ import { I18nProvider, LOCALES } from "./Translation/i18n";
 
 import Footer from "./components/Footer";
 import AddGym from "./pages/addGym/AddGym";
-import translate from "./Translation/i18n/translate";
+
 import UserList from "./pages/userList/UserList";
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
 
   function languageFunct(language) {
-    console.log("works!");
     setLocale(language);
   }
   return (

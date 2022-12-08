@@ -6,7 +6,7 @@ import AuthenticationButton from "./authentication/AuthenticationButton";
 import InputLabel from "@mui/material/InputLabel";
 
 import FormControl from "@mui/material/FormControl";
-import Box from "@mui/material/Box";
+
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import EnglishFlag from "../images/CountryFlags/UK_EnglishFlag.jpeg";
@@ -26,13 +26,8 @@ export default function Navbar(props) {
     }
   }
 
-  function handleClose() {
-    setAnchorEl(null);
-  }
-
   const path = pathname === "/";
 
-  console.log(pathname);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">

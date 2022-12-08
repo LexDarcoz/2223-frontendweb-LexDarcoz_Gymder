@@ -1,13 +1,17 @@
-// import { useState } from "react";
 import smallGymImg from "../../images/SmallGym.jpeg";
+import useGym from "../../api/Gym";
 
-// import gymList from "../../api/mock_data/Gyms_DATA";
 export default function AddGym() {
-  // const [gymList, setGymList] = useState(gymList[0]);
+  const gymApi = useGym();
+  async function addGym(e) {
+    e.preventDefault();
+    const name = e.target[0].value;
+    const emailAddress = e.target[1].value;
+    const owner = e.target[2].value;
+    const description = e.target[3].value;
 
-  // function addGym() {
-  //   setGymList([...gymList, { name: "yes" }]);
-  // }
+    await gymApi.save({ name, emailAddress, owner, description });
+  }
 
   return (
     <section
@@ -16,38 +20,44 @@ export default function AddGym() {
       style={{ backgroundcolor: " #eee" }}
     >
       <div>
-        <div class="row d-flex justify-content-center align-items-center h-100 ">
-          <div class="col-lg-12 col-xl-11 ">
+        <div className="row d-flex justify-content-center align-items-center h-100 ">
+          <div className="col-lg-12 col-xl-11 ">
             <div
-              class="text-white bg-dark bg-gradient"
+              className="text-white bg-dark bg-gradient"
               style={{ borderRadius: "15px" }}
             >
-              <div class="card-body p-md-5 ">
-                <div class="row justify-content-center">
-                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+              <div className="card-body p-md-5 ">
+                <div className="row justify-content-center">
+                  <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                    <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                       Add your gym!
                     </p>
 
-                    <form class="mx-1 mx-md-4">
-                      <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example1c">
+                    <form className="mx-1 mx-md-4" onSubmit={addGym}>
+                      <div className="d-flex flex-row align-items-center mb-4">
+                        <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                        <div className="form-outline flex-fill mb-0">
+                          <label
+                            className="form-label"
+                            htmlFor="form3Example1c"
+                          >
                             Gym name
                           </label>
                           <input
                             type="text"
                             id="form3Example1c"
-                            class="form-control"
+                            className="form-control"
                           />
                         </div>
                       </div>
 
-                      <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example3c">
+                      <div className="d-flex flex-row align-items-center mb-4">
+                        <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div className="form-outline flex-fill mb-0">
+                          <label
+                            className="form-label"
+                            htmlFor="form3Example3c"
+                          >
                             E-mail
                           </label>
                           <input
@@ -55,65 +65,74 @@ export default function AddGym() {
                             required
                             pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
                             id="form3Example3c"
-                            class="form-control"
+                            className="form-control"
                           />
                         </div>
                       </div>
 
-                      <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example4c">
+                      <div className="d-flex flex-row align-items-center mb-4">
+                        <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div className="form-outline flex-fill mb-0">
+                          <label
+                            className="form-label"
+                            htmlFor="form3Example4c"
+                          >
                             Owner
                           </label>
-                          <input type="text" class="form-control" />
+                          <input type="text" className="form-control" />
                         </div>
                       </div>
 
-                      <div class="d-flex flex-row align-items-center mb-4">
-                        <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example4cd">
+                      <div className="d-flex flex-row align-items-center mb-4">
+                        <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                        <div className="form-outline flex-fill mb-0">
+                          <label
+                            className="form-label"
+                            htmlFor="form3Example4cd"
+                          >
                             Additional info
                           </label>
                           <textarea
+                            className="form-control"
                             name="AdditionalInfo"
                             id="AdInfo"
-                            cols="15"
-                            rows="5"
+                            rows="4"
                             type="text"
                             style={{ color: "black" }}
                           ></textarea>
                         </div>
                       </div>
 
-                      <div class="form-check d-flex justify-content-center mb-5">
+                      <div className="form-check d-flex justify-content-center mb-5">
                         <input
-                          class="form-check-input me-2"
+                          className="form-check-input me-2"
                           type="checkbox"
                           value=""
                           id="form2Example3c"
                           required
                         />
-                        <label class="form-check-label" for="form2Example3">
+                        <label
+                          className="form-check-label"
+                          htmlFor="form2Example3"
+                        >
                           I agree all statements in{" "}
                           <a href="#!">Terms of service</a>
                         </label>
                       </div>
 
-                      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                         <button
                           type="submit"
                           // onClick={addGym}
-                          class="btn btn-primary btn-lg"
+                          className="btn btn-primary btn-lg"
                         >
                           Add Gym
                         </button>
                       </div>
                     </form>
                   </div>
-                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center">
-                    <img src={smallGymImg} class="img-fluid" alt="yes" />
+                  <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center">
+                    <img src={smallGymImg} className="img-fluid" alt="yes" />
                   </div>
                 </div>
               </div>

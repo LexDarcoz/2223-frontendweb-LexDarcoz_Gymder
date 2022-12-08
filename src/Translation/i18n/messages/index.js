@@ -2,8 +2,9 @@ import nl from "./nl-BE";
 import fr from "./fr-BE";
 import en from "./en-UK";
 
-export default {
+const LANGUAGES = {
   ...en,
   ...nl,
   ...fr,
 };
+export default LANGUAGES;
