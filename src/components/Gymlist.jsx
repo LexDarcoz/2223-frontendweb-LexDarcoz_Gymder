@@ -1,6 +1,29 @@
 import Transl from "../Translation/i18n/translate";
+import useGym from "../api/Gym";
+import { useState } from "react";
+import { useEffect } from "react";
+import GymCard from "./gymCard/gymCard";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Gymlist() {
+  const gymApi = useGym();
+  const navigate = useNavigate();
+
+  const [top3, setTop3] = useState([]);
+
+  useEffect(() => {
+    const fetchGyms = async () => {
+      const data = await gymApi.getAll();
+      const data_top3 = data.slice(0, 3);
+      setTop3([...data_top3]);
+    };
+    fetchGyms();
+  }, []);
+
+  function handleClick(id) {
+    navigate(`/giveRating/${id}`);
+  }
+
   return (
     <section className="team section-padding" id="ranking">
       <div className="container">
@@ -12,72 +35,15 @@ export default function Gymlist() {
           </div>
         </div>
         <div className="row">
-          <div className="col-12 col-md-6 col-lg-4">
-            <div className="card text-center">
-              <div className="card-body">
-                <img
-                  alt=""
-                  className="img-fluid rounded-circle"
-                  src="img/team-1.jpg"
-                />
-                <h3 className="card-title py-2">Gym1</h3>
-                <p className="card-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Sequi ipsam nostrum illo tempora esse quibusdam....
-                </p>
-                <p className="socials">
-                  <i className="bi bi-twitter text-dark mx-1"></i>
-                  <i className="bi bi-facebook text-dark mx-1"></i>
-                  <i className="bi bi-linkedin text-dark mx-1"></i>
-                  <i className="bi bi-instagram text-dark mx-1"></i>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            <div className="card text-center">
-              <div className="card-body">
-                <img
-                  alt=""
-                  className="img-fluid rounded-circle"
-                  src="img/team-2.jpg"
-                />
-                <h3 className="card-title py-2">Gym2</h3>
-                <p className="card-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Sequi ipsam nostrum illo tempora esse quibusdam.
-                </p>
-                <p className="socials">
-                  <i className="bi bi-twitter text-dark mx-1"></i>{" "}
-                  <i className="bi bi-facebook text-dark mx-1"></i>{" "}
-                  <i className="bi bi-linkedin text-dark mx-1"></i>{" "}
-                  <i className="bi bi-instagram text-dark mx-1"></i>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-4">
-            <div className="card text-center">
-              <div className="card-body">
-                <img
-                  alt=""
-                  className="img-fluid rounded-circle"
-                  src="img/team-3.jpg"
-                />
-                <h3 className="card-title py-2">Gym3</h3>
-                <p className="card-text">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Sequi ipsam nostrum illo tempora esse quibusdam.
-                </p>
-                <p className="socials">
-                  <i className="bi bi-twitter text-dark mx-1"></i>{" "}
-                  <i className="bi bi-facebook text-dark mx-1"></i>{" "}
-                  <i className="bi bi-linkedin text-dark mx-1"></i>{" "}
-                  <i className="bi bi-instagram text-dark mx-1"></i>
-                </p>
-              </div>
-            </div>
-          </div>
+          {top3.map((element) => {
+            return (
+              <GymCard
+                name={element.name}
+                description={element.description}
+                gymRating={element.rating}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

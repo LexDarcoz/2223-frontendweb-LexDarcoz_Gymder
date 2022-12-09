@@ -8,12 +8,13 @@ export default function AuthenticationButton() {
   if (isAuthenticated) {
     const { name, picture, givenName } = user;
     return (
-      <div className="d-flex flex-row align-items-center">
-        <div className="col">
-          <img src={picture} alt={givenName} className="rounded" />
+      <div className="d-flex flex-row align-items-center ">
+        <div className="col justify-content-center d-flex">
+          <img src={picture} alt={givenName} className="rounded w-50 " />
         </div>
-        <div className="col">{name}</div>
-        <div className="col">
+        <div className="form-label">{name}</div>
+
+        <div className="col w-50 form-label  ms-5 ">
           <LogoutButton />
         </div>
       </div>
