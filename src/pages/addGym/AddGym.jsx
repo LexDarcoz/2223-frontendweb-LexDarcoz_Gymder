@@ -103,17 +103,18 @@ export default function AddGym() {
                         </div>
                       </div>
 
-                      <div className="form-check d-flex justify-content-center mb-5">
+                      <div className="form-check d-flex justify-content-center mb-5 ">
                         <input
-                          className="form-check-input me-2"
+                          className="form-check-input me-2  fs-6"
                           type="checkbox"
                           value=""
                           id="form2Example3c"
                           required
                         />
                         <label
-                          className="form-check-label"
+                          className="form-check-label fs-6 "
                           htmlFor="form2Example3"
+                          // style={"width: 6rem;"}
                         >
                           I agree all statements in{" "}
                           <a href="#!">Terms of service</a>

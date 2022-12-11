@@ -13,7 +13,6 @@ export default function AuthenticationButton() {
           <img src={picture} alt={givenName} className="rounded w-50 " />
         </div>
         <div className="form-label">{name}</div>
-
         <div className="col w-50 form-label  ms-5 ">
           <LogoutButton />
         </div>
