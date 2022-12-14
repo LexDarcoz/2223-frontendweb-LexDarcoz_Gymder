@@ -7,16 +7,16 @@ export default function AuthLanding() {
   const { error, isAuthenticated, isLoading } = useAuth0();
 
   if (error) {
-    <div className="container">
+    <div className="container vh-100 d-flex align-items-center justify-content-center vh-100">
       <div className="row">
         <div className="col">
           <h1>Login failed</h1>
           <p>
             Sorry, we were unable to sign you in, the error below might be
-            useful.
+            useful. Try again?
           </p>
           <Error error={error} />
-          <LoginButton />
+          <LoginButton prop="btn btn-danger" />
         </div>
       </div>
     </div>;
@@ -28,12 +28,12 @@ export default function AuthLanding() {
 
   if (!isLoading && !isAuthenticated) {
     return (
-      <div className="container">
+      <div className="container vh-100 d-flex align-items-center justify-content-center vh-100">
         <div className="row">
-          <div className="col">
-            <h1>Login required</h1>
-            <p>You need to login to access this page.</p>
-            <LoginButton />
+          <div className="col text-center">
+            <h1>Login required!</h1>
+            <p>Sorry, you have to be logged in to access this feature!</p>
+            <LoginButton prop="btn btn-danger" />
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function AuthLanding() {
   }
 
   return (
-    <div className="container">
+    <div className="container vh-100 d-flex align-items-center justify-content-center vh-100">
       <div className="row">
         <div className="col">
           <h1>Signing in</h1>

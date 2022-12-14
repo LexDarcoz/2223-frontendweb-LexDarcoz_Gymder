@@ -1,3 +1,5 @@
+import RatingComponent from "../../components/tools/RatingComponent";
+
 export default function ContactForm() {
   return (
     <section className="mb-12 mt-4 section-padding vh-100" id="ContactForm">
@@ -18,6 +20,7 @@ export default function ContactForm() {
             name="contact-form"
             action="mailto:Alexander.schatteman@student.hogent.be"
             method="POST"
+            className="form-control"
           >
             <div className="row">
               <div className="col-md-6">
@@ -96,8 +99,10 @@ export default function ContactForm() {
               />
             </div>
           </form>
-
-          <div className="status"></div>
+          <div className="align-items-center d-flex flex-column">
+            Rate us!
+            <RatingComponent />
+          </div>
         </div>
 
         <div className="col-md-3 text-center">
@@ -113,8 +118,11 @@ export default function ContactForm() {
             </li>
 
             <li>
-              <i className="fas fa-envelope mt-4 fa-2x"></i>
-              <p>Alexander.schatteman@student.hogent.be</p>
+              <i className="fas fa-envelope mt-4 fa-2x "></i>
+              <p>
+                Alexander.schatteman <br />
+                @student.hogent.be
+              </p>
             </li>
           </ul>
         </div>

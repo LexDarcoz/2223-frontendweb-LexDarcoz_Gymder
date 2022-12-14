@@ -16,7 +16,7 @@ import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { Link } from "react-router-dom";
 
-export default function AuthenticationButton() {
+export default function AuthenticationButton(prop) {
   const { isAuthenticated, user } = useAuth0();
   const [anchorEl, setAnchorEl] = useState(null);
   if (isAuthenticated) {

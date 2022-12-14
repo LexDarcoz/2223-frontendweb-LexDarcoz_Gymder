@@ -106,7 +106,7 @@ export default function Navbar(props) {
               ) : null}
             </li>
             <li className="nav-item d-flex gap-5 mx-auto">
-              <AuthenticationButton prop={""} />
+              <AuthenticationButton prop={"btn-sm"} />
               <LanguageSetter languageFunct={languageFunct} />
             </li>
 

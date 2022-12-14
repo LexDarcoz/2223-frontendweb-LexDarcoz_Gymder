@@ -8,7 +8,7 @@ export default function NotFound() {
         <p class="fs-3">
           <span class="text-danger">Oops!</span> Page not found.
         </p>
-        <p class="lead">The page you’re looking for doesn’t exist.</p>
+        <p class="lead">hmmm, the page you’re looking for doesn’t exist.</p>
         <Link to="/" className="btn btn-danger">
           Go home
         </Link>
