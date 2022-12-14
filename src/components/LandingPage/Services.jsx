@@ -1,4 +1,5 @@
-import Transl from "../Translation/i18n/translate";
+import Transl from "../../Translation/i18n/translate";
+
 export default function Services() {
   return (
     <section className="services section-padding" id="services">
@@ -8,9 +9,9 @@ export default function Services() {
             <div className="section-header text-center pb-5">
               <h2>{Transl("OurServices")}</h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur
+                What does gymder exactly do for you?
                 <br />
-                adipisicing elit. Non, quo.
+                Why use gymder over other apps?
               </p>
             </div>
           </div>
@@ -28,14 +29,15 @@ export default function Services() {
               </div>
             </div>
           </div>
+
           <div className="col-12 col-md-12 col-lg-4">
             <div className="card text-white text-center bg-dark pb-2">
               <div className="card-body">
                 <i className="bi bi-journal"></i>
-                <h3 className="card-title">Sustainability</h3>
+                <h3 className="card-title">Progression</h3>
                 <p className="lead">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci eligendi modi temporibus alias iste. Accusantium?
+                  Gymder provides the ability to track progression and make up
+                  your schedule
                 </p>
                 <button className="btn bg-warning text-dark">Read More</button>
               </div>
@@ -47,8 +49,8 @@ export default function Services() {
                 <i className="bi bi-intersect"></i>
                 <h3 className="card-title">Integrity</h3>
                 <p className="lead">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Adipisci eligendi modi temporibus alias iste. Accusantium?
+                  Gymder is open source and will not steal data without your
+                  consent
                 </p>
                 <button className="btn bg-warning text-dark">Read More</button>
               </div>

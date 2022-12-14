@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import GymderLogo from "../images/GymderLogo.jpg";
-import Transl from "../Translation/i18n/translate";
+import Transl from "../../Translation/i18n/translate";
+import GymderLogo from "../../images/GymderLogo.jpg";
+
 export default function About() {
   return (
     <section className="about section-padding" id="about">

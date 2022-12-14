@@ -4,7 +4,6 @@ import UserCard from "../../components/userCard/UserCard";
 
 export default function UserList() {
   const [users, setUsers] = useState([]);
-  console.log("This shit working");
   useEffect(() => {
     (async () => {
       let userData;

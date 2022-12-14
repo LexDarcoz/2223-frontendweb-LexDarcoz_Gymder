@@ -15,7 +15,7 @@ export default function Contact() {
                   @student.hogent.be
                 </Link>
                 <br />
-                📞0485 47 48 78
+                <i class="bi bi-phone"></i> 0485 47 48 78
               </p>
             </div>
           </div>

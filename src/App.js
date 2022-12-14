@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import AddGym from "./pages/addGym/AddGym";
 
 import UserList from "./pages/userList/UserList";
+import AuthLanding from "./components/authentication/AuthLanding";
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
@@ -31,6 +32,8 @@ function App() {
           <Route path="locations" element={<Locations />} />
           <Route path="apparaten" element={<Equipment />} />
           <Route path="contactForm" element={<ContactForm />} />
+          <Route path="/login" element={<AuthLanding />} />
+
           <Route path="myProfile" element={<MyProfile />} />
           <Route path="addGym" element={<AddGym />} />
           <Route path="discover" element={<UserList />} />

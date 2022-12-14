@@ -1,11 +1,13 @@
 /*google font*/
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,700,800,900&display=swap");
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .navbar {
   position: fixed;
   top: 0;

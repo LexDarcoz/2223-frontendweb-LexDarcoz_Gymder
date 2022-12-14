@@ -1,18 +1,20 @@
 import React from "react";
-import "react-calendar/dist/Calendar.css";
-import About from "../components/About";
-import Carousel from "../components/Carousel";
-import Contact from "../components/Contact";
+import About from "../components/LandingPage/About";
+import Carousel from "../components/LandingPage/Carousel";
+import Contact from "../components/LandingPage/Contact";
 import Gymlist from "../components/Gymlist";
-import Services from "../components/Services";
+import Services from "../components/LandingPage/Services";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function MyGym() {
+  const { isAuthenticated } = useAuth0();
   return (
     <>
       <Carousel />
       <About />
       <Services />
-      <Gymlist />
+
+      {isAuthenticated ? <Gymlist /> : null}
 
       <Contact />
     </>
