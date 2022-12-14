@@ -9,13 +9,13 @@ import MyAuth0Provider from "./contexts/MyAuth0Provider";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
-  <MyAuth0Provider>
-    <React.StrictMode>
+  <React.StrictMode>
+    <MyAuth0Provider>
       <BrowserRouter>
         <App />
       </BrowserRouter>
-    </React.StrictMode>
-  </MyAuth0Provider>
+    </MyAuth0Provider>
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
