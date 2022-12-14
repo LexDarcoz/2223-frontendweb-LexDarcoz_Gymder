@@ -23,23 +23,14 @@ export default function LanguageSetter(props) {
         onClose={handleClose}
         onClick={open ? handleClose : handleClick}
       >
-        <MenuItem value="en">
-          <span
-            class="fi fi-us"
-            onClick={() => languageFunct(LOCALES.ENGLISH)}
-          ></span>
+        <MenuItem value="en" onClick={() => languageFunct(LOCALES.ENGLISH)}>
+          <span className="fi fi-us"></span>
         </MenuItem>
-        <MenuItem value="nl">
-          <span
-            class="fi fi-nl "
-            onClick={() => languageFunct(LOCALES.DUTCH)}
-          ></span>
+        <MenuItem value="nl" onClick={() => languageFunct(LOCALES.DUTCH)}>
+          <span className="fi fi-nl "></span>
         </MenuItem>
-        <MenuItem value="fr">
-          <span
-            class="fi fi-fr"
-            onClick={() => languageFunct(LOCALES.FRENCH)}
-          ></span>
+        <MenuItem value="fr" onClick={() => languageFunct(LOCALES.FRENCH)}>
+          <span className="fi fi-fr"></span>
         </MenuItem>
       </Select>
     </FormControl>

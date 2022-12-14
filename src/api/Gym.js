@@ -1,19 +1,18 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import { useCallback } from "react";
+import { useCallback, useMemo } from "react";
 
-const baseUrl = `${process.env.REACT_APP_API_URL}/gym`;
+const baseUrl = `${process.env.REACT_APP_API_URL}gym`;
 
 const useGym = () => {
-  // 👈 1
-  const { getAccessTokenSilently } = useAuth0(); // 👈 2
+  const { getAccessTokenSilently } = useAuth0();
 
   const getAll = useCallback(async () => {
-    const token = await getAccessTokenSilently(); // 👈 3
+    const token = await getAccessTokenSilently();
     const { data } = await axios.get(baseUrl, {
       headers: {
         Authorization: `Bearer ${token}`,
-      }, // 👈 4
+      },
     });
 
     return data.items;
@@ -21,11 +20,11 @@ const useGym = () => {
 
   const getById = useCallback(
     async (id) => {
-      const token = await getAccessTokenSilently(); // 👈 3
+      const token = await getAccessTokenSilently();
       const { data } = await axios.get(`${baseUrl}/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
-        }, // 👈 4
+        },
       });
       return data;
     },
@@ -34,7 +33,7 @@ const useGym = () => {
 
   const save = useCallback(
     async (gym) => {
-      const token = await getAccessTokenSilently(); // 👈 3
+      const token = await getAccessTokenSilently();
       const { id, ...values } = gym;
       await axios({
         method: id ? "PUT" : "POST",
@@ -42,7 +41,7 @@ const useGym = () => {
         data: values,
         headers: {
           Authorization: `Bearer ${token}`,
-        }, // 👈 4
+        },
       });
     },
     [getAccessTokenSilently]
@@ -50,22 +49,22 @@ const useGym = () => {
 
   const deleteById = useCallback(
     async (id) => {
-      const token = await getAccessTokenSilently(); // 👈 3
+      const token = await getAccessTokenSilently();
       await axios.delete(`${baseUrl}/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
-        }, // 👈 4
+        },
       });
     },
     [getAccessTokenSilently]
   );
 
-  return {
-    getAll,
-    getById,
-    save,
-    deleteById,
-  }; // 👈 5
+  const gymApi = useMemo(
+    () => ({ getAll, getById, save, deleteById }),
+    [getAll, save, getById, deleteById]
+  );
+
+  return gymApi;
 };
 
 export default useGym;
