@@ -9,8 +9,8 @@ export default function GymCard({
   handleClick,
 }) {
   return (
-    <div className="col-12 col-md-6 col-lg-4" onClick={() => handleClick(id)}>
-      <div className="card text-center">
+    <div className="col-12 col-md-6 col-lg-4 " onClick={() => handleClick(id)}>
+      <div className="card text-center me-1">
         <div className="card-body">
           <img
             alt=""

@@ -1,17 +1,18 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { Link, useLocation } from "react-router-dom";
-import { LOCALES } from "../Translation/i18n";
-import Transl from "../Translation/i18n/translate";
-import AuthenticationButton from "./authentication/AuthenticationButton";
+import { LOCALES } from "../../Translation/i18n";
+import Transl from "../../Translation/i18n/translate";
+import AuthenticationButton from "../authentication/AuthenticationButton";
 
 import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
-import LanguageSetter from "./language/LanguageSetter";
+import LanguageSetter from "../languageTools/LanguageSetter";
 
 export default function Navbar(props) {
   const { pathname } = useLocation();
   const { languageFunct } = props;
   const { isAuthenticated, user } = useAuth0();
+
   const path = pathname === "/";
 
   return (
@@ -46,7 +47,7 @@ export default function Navbar(props) {
                   {Transl("Home")}
                 </a>
               ) : (
-                <Link className="nav-link" to="/#contact">
+                <Link className="nav-link" to="/">
                   {Transl("Home")}
                 </Link>
               )}
@@ -98,23 +99,17 @@ export default function Navbar(props) {
                 </Link>
               )}
             </li>
-            <li className="nav-item">
+            <li className="nav-item" style={{ marginRight: "10px" }}>
               {isAuthenticated ? (
                 <Link className="nav-link" to="/discover">
                   {Transl("Discover")}
                 </Link>
               ) : null}
             </li>
-            <li className="nav-item d-flex gap-5 mx-auto">
+            <li className="nav-item d-flex gap-5 mx-auto ">
               <AuthenticationButton prop={"btn-sm"} />
               <LanguageSetter languageFunct={languageFunct} />
             </li>
-
-            <li
-              id="LanguageSetter"
-              className="text-right"
-              style={{ marginRight: "15px" }}
-            ></li>
           </ul>
         </div>
       </div>

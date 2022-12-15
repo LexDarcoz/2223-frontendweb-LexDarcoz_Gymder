@@ -2,129 +2,101 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AuthLanding from "../../components/authentication/AuthLanding";
 
 export default function MyProfile() {
-  const { error, isAuthenticated, isLoading } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
 
   if (isAuthenticated) {
     return (
-      <div class="container rounded bg-white mt-5 mb-5">
-        <div class="row">
-          <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-              <img
-                class="rounded-circle mt-5"
-                width="150px"
-                src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"
-                alt="PoriflePicture"
-              />
-              <span class="font-weight-bold">Edogaru</span>
-              <span class="text-black-50">edogaru@mail.com.my</span>
-              <span> </span>
+      <section
+        className="min-vh-100 mb-5 h-100 container under-Navbar "
+        id="UnderNav"
+        style={{ backgroundcolor: " #eee" }}
+      >
+        <div className="container rounded bg-white mt-5 mb-5">
+          <div className="row">
+            <div className="col-md-3 border-right">
+              <div className="d-flex flex-column align-items-center text-center p-3 py-5 overflow-auto">
+                <img
+                  className="rounded-circle mt-5"
+                  width="150px"
+                  src={user.picture}
+                  alt="ProfilePictureOfUser"
+                />
+                <span className="font-weight-bold">{user.name}</span>
+                <span className="text-black-50">{user.given_name}</span>
+              </div>
             </div>
-          </div>
-          <div class="col-md-5 border-right">
-            <div class="p-3 py-5">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <h4 class="text-right">Profile Settings</h4>
-              </div>
-              <div class="row mt-2">
-                <div class="col-md-6">
-                  <label class="labels">Name</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="first name"
-                  />
+            <div className="col-md-5 border-right">
+              <div className="p-3 py-5">
+                <div className="d-flex justify-content-between align-items-center mb-3">
+                  <h4 className="text-right">Profile Settings</h4>
                 </div>
-                <div class="col-md-6">
-                  <label class="labels">Surname</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="surname"
-                  />
+                <div className="row mt-2">
+                  <div className="col-md-6">
+                    <label className="labels">Name</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="first name"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <label class="labels">Email</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="enter email id"
+                    />
+                  </div>
                 </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-12">
-                  <label class="labels">Mobile Number</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="enter phone number"
-                  />
+                <div className="row mt-3">
+                  <div className="col-md-12">
+                    <label className="labels">Mobile Number</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="enter phone number"
+                    />
+                  </div>
+                  <div className="col-md-12">
+                    <label className="labels">Address</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="enter address line 1"
+                    />
+                  </div>
                 </div>
-                <div class="col-md-12">
-                  <label class="labels">Address Line 1</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="enter address line 1"
-                  />
+                <div className="row mt-3">
+                  <div className="col-md-6">
+                    <label class="labels">Country</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="country"
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    <label className="labels">State/Region</label>
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="state"
+                    />
+                  </div>
                 </div>
-                <div class="col-md-12">
-                  <label class="labels">Postcode</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="enter address line 2"
-                  />
+                <div className="mt-5 text-center">
+                  <button
+                    className="btn btn-primary profile-button"
+                    type="button"
+                  >
+                    Save Profile
+                  </button>
                 </div>
-                <div class="col-md-12">
-                  <label class="labels">State</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="enter address line 2"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Area</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="enter address line 2"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Email ID</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="enter email id"
-                  />
-                </div>
-                <div class="col-md-12">
-                  <label class="labels">Education</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="education"
-                  />
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-md-6">
-                  <label class="labels">Country</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="country"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <label class="labels">State/Region</label>
-                  <input type="text" class="form-control" placeholder="state" />
-                </div>
-              </div>
-              <div class="mt-5 text-center">
-                <button class="btn btn-primary profile-button" type="button">
-                  Save Profile
-                </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     );
   }
   return <AuthLanding />;

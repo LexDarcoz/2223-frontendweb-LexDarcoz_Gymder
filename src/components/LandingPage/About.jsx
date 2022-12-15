@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Transl from "../../Translation/i18n/translate";
-import GymderLogo from "../../images/GymderLogo.jpg";
+import GymderLogo from "../../images/logo/GymderLogo.jpg";
 
 export default function About() {
   return (

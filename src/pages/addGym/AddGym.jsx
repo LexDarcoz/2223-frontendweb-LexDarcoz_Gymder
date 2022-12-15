@@ -1,4 +1,4 @@
-import smallGymImg from "../../images/SmallGym.jpeg";
+import smallGymImg from "../../images/addGym/SmallGym.jpeg";
 import useGym from "../../api/Gym";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthLanding from "../../components/authentication/AuthLanding";

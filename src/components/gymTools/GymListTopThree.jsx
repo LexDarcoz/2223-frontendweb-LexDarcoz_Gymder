@@ -1,11 +1,11 @@
-import Transl from "../Translation/i18n/translate";
-import useGym from "../api/Gym";
+import Transl from "../../Translation/i18n/translate";
+import useGym from "../../api/Gym";
 import { useState } from "react";
 import { useEffect } from "react";
-import GymCard from "./gymCard/gymCard";
+import GymCard from "./GymCard";
 // import { useNavigate } from "react-router-dom";
 
-export default function Gymlist() {
+export default function GymListTopThree() {
   const gymApi = useGym();
   // const navigate = useNavigate();
 

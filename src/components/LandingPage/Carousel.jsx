@@ -5,8 +5,11 @@ import CarouselImg3 from "../../images/Carousel/Carousel3.jpeg";
 import Transl from "../../Translation/i18n/translate";
 import LoginButton from "../authentication/LoginButton";
 import "../../styling/App.css";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export default function Carousel() {
+  const { isAuthenticated, user } = useAuth0();
+
   return (
     <div
       className="carousel slide"
@@ -37,13 +40,25 @@ export default function Carousel() {
       <div className="carousel-inner">
         <div className="carousel-item active">
           <img alt="..." className="d-block w-100" src={CarouselImg2} />
-          <div className="carousel-caption ">
-            <h5>{Transl("YourGym")}</h5>
-            <p>{Transl("SetupRoutine")}</p>
-            <p>
-              <LoginButton prop={"btn btn-warning"} />
-            </p>
-          </div>
+          {isAuthenticated ? (
+            <div className="carousel-caption ">
+              <h5>Welcome {user.name}</h5>
+              <p>{Transl("SetupRoutine")}</p>
+              <p>
+                <Link className="btn btn-warning" to="myGym">
+                  My gym
+                </Link>
+              </p>
+            </div>
+          ) : (
+            <div className="carousel-caption ">
+              <h5>{Transl("YourGym")}</h5>
+              <p>{Transl("SetupRoutine")}</p>
+              <p>
+                <LoginButton prop={"btn btn-warning"} />
+              </p>
+            </div>
+          )}
         </div>
         <div className="carousel-item ">
           <img alt="..." className="d-block w-100" src={CarouselImg3} />

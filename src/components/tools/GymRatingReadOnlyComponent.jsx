@@ -7,7 +7,14 @@ export default function GymRatingComponent({ gymRating }) {
         "& > legend": { mt: 2 },
       }}
     >
-      <Typography component="legend">Current rating</Typography>
+      {gymRating === 0 ? (
+        <Typography component="legend">
+          This gym has not been rated yet
+        </Typography>
+      ) : (
+        <Typography component="legend">Current rating</Typography>
+      )}
+
       <Rating name="read-only" value={gymRating} readOnly precision={0.5} />
     </Box>
   );

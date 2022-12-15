@@ -99,7 +99,7 @@ export default function ContactForm() {
               />
             </div>
           </form>
-          <div className="align-items-center d-flex flex-column">
+          <div className="align-items-center  d-flex flex-column">
             Rate us!
             <RatingComponent />
           </div>

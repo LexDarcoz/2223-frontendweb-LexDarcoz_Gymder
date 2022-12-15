@@ -14,13 +14,14 @@ import {
 import React, { useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 
 export default function AuthenticationButton(prop) {
   const { isAuthenticated, user } = useAuth0();
   const [anchorEl, setAnchorEl] = useState(null);
+
   if (isAuthenticated) {
-    const { name, picture } = user;
+    const { picture } = user;
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -87,28 +88,28 @@ export default function AuthenticationButton(prop) {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           <MenuItem>
-            <Avatar sx={{ width: 32, height: 32 }}>
-              <img src={picture} alt="ProfilePicture" />
-            </Avatar>
-            <Link className="nav-link" to="/myProfile">
+            <Link className="nav-link d-flex" to="/myProfile">
+              <Avatar sx={{ width: 32, height: 32 }}>
+                <img src={picture} alt="ProfilePicture" />
+              </Avatar>
               Profile
             </Link>
           </MenuItem>
           <MenuItem>
-            <Avatar sx={{ width: 32, height: 32 }}>
-              <img src={picture} alt="ProfilePicture" />
-            </Avatar>
-            <Link className="nav-link" to="/myGym">
+            <Link className="nav-link d-flex" to="/myGym">
+              <Avatar sx={{ width: 32, height: 32 }}>
+                <img src={picture} alt="ProfilePicture" />
+              </Avatar>
               My Gym
             </Link>
           </MenuItem>
           <Divider />
 
           <MenuItem>
-            <ListItemIcon>
-              <Settings fontSize="small" />
-            </ListItemIcon>
             <Link className="nav-link" to="/myProfile/Settings">
+              <ListItemIcon>
+                <Settings fontSize="small" />
+              </ListItemIcon>
               Settings
             </Link>
           </MenuItem>
