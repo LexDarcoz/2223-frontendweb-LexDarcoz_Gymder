@@ -7,7 +7,7 @@ export default function AuthLanding() {
   const { error, isAuthenticated, isLoading } = useAuth0();
 
   if (error) {
-    <div className="container vh-100 d-flex align-items-center justify-content-center vh-100">
+    <div className="container vh-100 d-flex align-items-center justify-content-center">
       <div className="row">
         <div className="col">
           <h1>Login failed</h1>
@@ -28,7 +28,7 @@ export default function AuthLanding() {
 
   if (!isLoading && !isAuthenticated) {
     return (
-      <div className="container vh-100 d-flex align-items-center justify-content-center vh-100">
+      <div className="container vh-100 d-flex align-items-center justify-content-center ">
         <div className="row">
           <div className="col text-center">
             <h1>Login required!</h1>
@@ -41,7 +41,7 @@ export default function AuthLanding() {
   }
 
   return (
-    <div className="container vh-100 d-flex align-items-center justify-content-center vh-100">
+    <div className="container vh-100 d-flex align-items-center justify-content-center">
       <div className="row">
         <div className="col">
           <h1>Signing in</h1>
