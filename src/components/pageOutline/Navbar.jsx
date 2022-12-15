@@ -1,17 +1,14 @@
 import "bootstrap/dist/css/bootstrap.css";
 import { Link, useLocation } from "react-router-dom";
-import { LOCALES } from "../../Translation/i18n";
 import Transl from "../../Translation/i18n/translate";
 import AuthenticationButton from "../authentication/AuthenticationButton";
-
-import { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import LanguageSetter from "../languageTools/LanguageSetter";
 
 export default function Navbar(props) {
   const { pathname } = useLocation();
   const { languageFunct } = props;
-  const { isAuthenticated, user } = useAuth0();
+  const { isAuthenticated } = useAuth0();
 
   const path = pathname === "/";
 

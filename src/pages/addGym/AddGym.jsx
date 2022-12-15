@@ -2,16 +2,30 @@ import smallGymImg from "../../images/addGym/SmallGym.jpeg";
 import useGym from "../../api/Gym";
 import { useAuth0 } from "@auth0/auth0-react";
 import AuthLanding from "../../components/authentication/AuthLanding";
+import ToolTip from "../../components/tools/ToolTip";
+import { useState } from "react";
 
 export default function AddGym() {
   const gymApi = useGym();
+  const [open, setOpen] = useState(false);
+  const TooltipActivation = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
   async function addGym(e) {
     e.preventDefault();
     const name = e.target[0].value;
     const emailAddress = e.target[1].value;
     const owner = e.target[2].value;
     const description = e.target[3].value;
-
+    TooltipActivation();
     await gymApi.save({ name, emailAddress, owner, description });
   }
   const { isAuthenticated } = useAuth0();
@@ -19,7 +33,7 @@ export default function AddGym() {
   if (isAuthenticated) {
     return (
       <section
-        className="min-vh-100 mb-5 h-100 container under-Navbar "
+        className="min-vh-100 mb-3 h-100 container under-Navbar "
         id="UnderNav"
         style={{ backgroundcolor: " #eee" }}
       >
@@ -30,7 +44,7 @@ export default function AddGym() {
                 className="text-white bg-dark bg-gradient"
                 style={{ borderRadius: "15px" }}
               >
-                <div className="card-body p-md-5 ">
+                <div className="card-body p-md-4 ">
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
@@ -132,6 +146,13 @@ export default function AddGym() {
                           >
                             Add Gym
                           </button>
+
+                          <ToolTip
+                            open={open}
+                            onClose={handleClose}
+                            severity="success"
+                            message="Succesfully added a gym!"
+                          />
                         </div>
                       </form>
                     </div>

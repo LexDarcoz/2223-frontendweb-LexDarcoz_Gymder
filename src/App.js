@@ -1,4 +1,4 @@
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import React, { useState } from "react";
 import Navbar from "./components/pageOutline/Navbar";
 import ContactForm from "./pages/contactForm/ContactForm";
@@ -13,6 +13,7 @@ import AuthLanding from "./components/authentication/AuthLanding";
 import LandingPage from "./pages/landingPage/LandingPage";
 import Discover from "./pages/userList/Discover";
 import ScrollToTop from "./components/tools/ScrollToTop";
+import Settings from "./pages/settings/Settings";
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
@@ -33,6 +34,7 @@ function App() {
           <Route path="myProfile" element={<MyProfile />} />
           <Route path="addGym" element={<AddGym />} />
           <Route path="discover" element={<Discover />} />
+          <Route path="/myProfile/settings" element={<Settings />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 

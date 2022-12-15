@@ -1,21 +1,17 @@
-import { render } from "@testing-library/react";
 import { useState } from "react";
 import GymList from "./GymList";
 
 import UserList from "./UserList";
 
 export default function Discover() {
-  const [isShownGymList, setIsShownGymList] = useState(false);
   const [isShownUserList, setIsShownUserList] = useState(false);
 
   function handleClick(prop) {
     if (prop === "user") {
-      setIsShownUserList(true);
-      setIsShownGymList(false);
+      setIsShownUserList(false);
     }
     if (prop === "gym") {
-      setIsShownGymList(true);
-      setIsShownUserList(false);
+      setIsShownUserList(true);
     }
   }
 
@@ -35,7 +31,7 @@ export default function Discover() {
           Gyms
         </button>
       </span>
-      {isShownUserList ? <UserList /> : <GymList />}
+      {isShownUserList ? <GymList /> : <UserList />}
     </div>
   );
 }

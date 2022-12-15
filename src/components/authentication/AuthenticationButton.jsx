@@ -14,7 +14,7 @@ import {
 import React, { useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function AuthenticationButton(prop) {
   const { isAuthenticated, user } = useAuth0();
@@ -106,7 +106,7 @@ export default function AuthenticationButton(prop) {
           <Divider />
 
           <MenuItem>
-            <Link className="nav-link" to="/myProfile/Settings">
+            <Link className="nav-link" to="/myProfile/settings">
               <ListItemIcon>
                 <Settings fontSize="small" />
               </ListItemIcon>

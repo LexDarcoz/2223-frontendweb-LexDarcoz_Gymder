@@ -1,4 +1,3 @@
-import { Box, Rating, Typography } from "@mui/material";
 import GymRatingReadOnlyComponent from "../tools/GymRatingReadOnlyComponent";
 
 export default function GymCard({
@@ -19,9 +18,9 @@ export default function GymCard({
           />
           <h3 className="card-title py-2">{name}</h3>
           <p className="card-text">{description}</p>
-          <p>
-            <GymRatingReadOnlyComponent gymRating={gymRating} />
-          </p>
+
+          <GymRatingReadOnlyComponent gymRating={gymRating} />
+
           <p className="socials">
             <i className="bi bi-twitter text-dark mx-1"></i>
             <i className="bi bi-facebook text-dark mx-1"></i>

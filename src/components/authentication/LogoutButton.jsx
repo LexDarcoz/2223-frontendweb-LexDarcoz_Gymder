@@ -3,16 +3,14 @@ import Transl from "../../Translation/i18n/translate";
 
 function LogoutButton() {
   const { logout } = useAuth0();
+  function handleClick() {
+    logout({
+      returnTo: window.location.origin,
+    });
+  }
+
   return (
-    <button
-      type="button"
-      className="btn btn-danger"
-      onClick={() =>
-        logout({
-          returnTo: window.location.origin,
-        })
-      }
-    >
+    <button type="button" className="btn btn-danger" onClick={handleClick}>
       {Transl("LogOut")}
     </button>
   );

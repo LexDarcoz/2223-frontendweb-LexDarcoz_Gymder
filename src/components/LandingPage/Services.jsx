@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Transl from "../../Translation/i18n/translate";
 
 export default function Services() {
@@ -23,9 +24,9 @@ export default function Services() {
                 <i className="bi bi-laptop"></i>
                 <h3 className="card-title">{Transl("AddOthers")}</h3>
                 <p className="lead">{Transl("AddFriendsDiscoverButton")}</p>
-                <button className="btn bg-warning text-dark">
+                <Link to="/discover" className="btn bg-warning text-dark">
                   {Transl("CheckItOut")}
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -39,7 +40,9 @@ export default function Services() {
                   Gymder provides the ability to track progression and make up
                   your schedule
                 </p>
-                <button className="btn bg-warning text-dark">Read More</button>
+                <Link to="/myGym" className="btn bg-warning text-dark">
+                  Read More
+                </Link>
               </div>
             </div>
           </div>
