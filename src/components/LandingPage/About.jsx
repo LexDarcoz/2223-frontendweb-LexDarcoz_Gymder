@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Transl from "../../Translation/i18n/translate";
 import GymderLogo from "../../images/logo/GymderLogo.jpg";
-
+// bingchilling
 export default function About() {
   return (
     <section className="about section-padding" id="about">
