@@ -11,7 +11,7 @@ import Footer from "./components/pageOutline/Footer";
 import AddGym from "./pages/addGym/AddGym";
 import AuthLanding from "./components/authentication/AuthLanding";
 import LandingPage from "./pages/LandingPage";
-import Discover from "./pages/userList/Discover";
+import Discover from "./pages/Discover/Discover";
 import ScrollToTop from "./components/tools/ScrollToTop";
 import Settings from "./pages/settings/Settings";
 
