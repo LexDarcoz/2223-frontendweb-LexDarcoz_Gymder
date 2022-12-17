@@ -21,12 +21,24 @@ export default function AddGym() {
 
   async function addGym(e) {
     e.preventDefault();
-    const name = e.target[0].value;
-    const emailAddress = e.target[1].value;
-    const owner = e.target[2].value;
-    const description = e.target[3].value;
+
+    const data = new FormData();
+
+    data.append("name", e.target[0].value);
+    data.append("emailAddress", e.target[1].value);
+    data.append("owner", e.target[2].value);
+    data.append("description", e.target[3].value);
+    data.append("image", e.target[4].files[0]);
+
+    console.log(data.get("image"));
     TooltipActivation();
-    await gymApi.save({ name, emailAddress, owner, description });
+    await gymApi.save({
+      name: data.get("name"),
+      emailAddress: data.get("emailAddress"),
+      owner: data.get("owner"),
+      description: data.get("description"),
+      image: data.get("image"),
+    });
   }
   const { isAuthenticated } = useAuth0();
 
@@ -68,7 +80,6 @@ export default function AddGym() {
                             />
                           </div>
                         </div>
-
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -87,7 +98,6 @@ export default function AddGym() {
                             />
                           </div>
                         </div>
-
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -100,7 +110,6 @@ export default function AddGym() {
                             <input type="text" className="form-control" />
                           </div>
                         </div>
-
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-key fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -120,7 +129,16 @@ export default function AddGym() {
                             ></textarea>
                           </div>
                         </div>
-
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <div className="form-outline flex-fill mb-0">
+                            <input
+                              className="form-control"
+                              name="image"
+                              type="file"
+                              id="formFile"
+                            />
+                          </div>
+                        </div>
                         <div className="form-check d-flex justify-content-center mb-5 ">
                           <input
                             className="form-check-input me-2  fs-6"
@@ -132,13 +150,11 @@ export default function AddGym() {
                           <label
                             className="form-check-label fs-6 "
                             htmlFor="form2Example3"
-                            // style={"width: 6rem;"}
                           >
                             I agree all statements in{" "}
                             <a href="#!">Terms of service</a>
                           </label>
                         </div>
-
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button
                             type="submit"

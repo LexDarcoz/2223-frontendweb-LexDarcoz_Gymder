@@ -1,20 +1,30 @@
 import GymRatingReadOnlyComponent from "../tools/GymRatingReadOnlyComponent";
-
+import NoImageYet from "../../images/logo/NoImageYet.jpg";
 export default function GymCard({
   name,
   description,
   gymRating,
   id,
+  image,
   handleClick,
 }) {
+  console.log(image);
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+
   return (
-    <div className="col-12 col-md-6 col-lg-4 " onClick={() => handleClick(id)}>
-      <div className="card text-center me-1">
+    <div className="col-12 col-md-6 col-lg-4" onClick={() => handleClick(id)}>
+      <div className="card text-center me-1" style={{ minHeight: "560px" }}>
         <div className="card-body">
           <img
             alt=""
             className="img-fluid rounded-circle"
-            src="img/team-1.jpg"
+            style={{
+              maxWidth: "100px",
+              maxHeight: "100px",
+              minWidth: "100px",
+              minHeight: "100px",
+            }}
+            src={image ? `${baseUrl}/${image}` : `${NoImageYet}`}
           />
           <h3 className="card-title py-2">{name}</h3>
           <p className="card-text">{description}</p>

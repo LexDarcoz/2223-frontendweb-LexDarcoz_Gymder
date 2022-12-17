@@ -41,6 +41,7 @@ export default function GymListTopThree() {
                 name={element.name}
                 description={element.description}
                 gymRating={element.rating}
+                image={element.image}
                 key={element.id}
               />
             );

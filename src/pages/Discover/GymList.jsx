@@ -29,6 +29,7 @@ export default function GymList() {
               name={gym.name}
               description={gym.description}
               gymRating={gym.rating}
+              image={gym.image}
               key={gym.id}
             />
           );
