@@ -16,8 +16,8 @@ export const getById = async (id) => {
   return data;
 };
 
-export const save = async (toestel) => {
-  const { id, ...values } = toestel;
+export const save = async (user) => {
+  const { id, ...values } = user;
   await axios({
     method: id ? "PUT" : "POST",
     url: `${baseUrl}/${id ?? ""}`,

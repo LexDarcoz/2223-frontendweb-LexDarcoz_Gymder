@@ -156,6 +156,9 @@ export default function AddGym() {
                           </label>
                         </div>
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                          <button type="reset" className="btn btn-secondary">
+                            Cancel
+                          </button>
                           <button
                             type="submit"
                             className="btn btn-primary btn-lg"
