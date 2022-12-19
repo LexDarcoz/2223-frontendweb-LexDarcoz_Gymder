@@ -45,7 +45,7 @@ export default function AddGym() {
   if (isAuthenticated) {
     return (
       <section
-        className="min-vh-100 mb-3 h-100 container under-Navbar "
+        className="min-vh-100 mb-3 h-100 container under-Navbar mt-2 "
         id="UnderNav"
         style={{ backgroundcolor: " #eee" }}
       >
