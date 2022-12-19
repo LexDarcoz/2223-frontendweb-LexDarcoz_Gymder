@@ -1,5 +1,5 @@
 import LanguageSetter from "../../components/languageTools/LanguageSetter";
-import MyProfile from "../userProfile/MyProfile";
+import MyProfile from "../Profiles/UserProfiles/MyProfile";
 
 export default function Settings() {
   return (

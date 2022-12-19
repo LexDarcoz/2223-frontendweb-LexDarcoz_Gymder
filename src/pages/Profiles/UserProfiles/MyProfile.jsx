@@ -1,12 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useContext, useEffect, useState } from "react";
 
-import useUser from "../../api/User";
-import AuthLanding from "../../components/authentication/AuthLanding";
+import useUser from "../../../api/User";
+import AuthLanding from "../../../components/authentication/AuthLanding";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import "./myProfile.css";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { ThemeContext } from "../../App";
+import { ThemeContext } from "../../../App";
 export default function MyProfile() {
   const { isAuthenticated, user } = useAuth0();
   const [open, setOpen] = useState(false);
@@ -14,7 +14,7 @@ export default function MyProfile() {
 
   const userApi = useUser();
   const theme = useContext(ThemeContext);
-  console.log(theme.theme);
+
   const TooltipActivation = () => {
     setOpen(true);
   };
@@ -42,7 +42,11 @@ export default function MyProfile() {
     data.append("name", e.target[0].value);
     data.append("emailAddress", e.target[1].value);
     data.append("phone", e.target[2].value);
-    data.append("bio", e.target[3].value);
+    data.append("country", e.target[3].value);
+    data.append("state", e.target[4].value);
+    data.append("city", e.target[5].value);
+    data.append("bio", e.target[6].value);
+
     TooltipActivation();
 
     await userApi.save({
@@ -51,6 +55,9 @@ export default function MyProfile() {
         ? data.get("emailAddress")
         : user.emailAddress,
       phone: data.get("phone") ? data.get("phone") : user.phone,
+      country: data.get("country") ? data.get("country") : user.country,
+      state: data.get("state") ? data.get("state") : user.state,
+      city: data.get("city") ? data.get("city") : user.city,
       bio: data.get("bio") ? data.get("bio") : user.bio,
     });
   }
@@ -155,7 +162,7 @@ export default function MyProfile() {
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">State</label>
+                      <label htmlFor="phone">City</label>
                       <input
                         type="text"
                         className="form-control"

@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 import Navbar from "./components/pageOutline/Navbar";
 import ContactForm from "./pages/contactForm/ContactForm";
 import MyGym from "./pages/myGym/MyGym";
-import MyProfile from "./pages/userProfile/MyProfile";
+import MyProfile from "./pages/Profiles/UserProfiles/MyProfile";
 import "./styling/App.css";
 import NotFound from "./components/tools/NotFound";
 import { I18nProvider, LOCALES } from "./Translation/i18n";
@@ -14,6 +14,7 @@ import LandingPage from "./pages/LandingPage";
 import Discover from "./pages/Discover/Discover";
 import ScrollToTop from "./components/tools/ScrollToTop";
 import Settings from "./pages/settings/Settings";
+import DetailsGym from "./pages/Profiles/GymProfile/DetailsGym";
 export const ThemeContext = createContext(null);
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
             <Route path="myGym" element={<MyGym />} />
             <Route path="myProfile" element={<MyProfile />} />
             <Route path="addGym" element={<AddGym />} />
+            <Route path="detailsGym/:id" element={<DetailsGym />} />
             <Route path="discover" element={<Discover />} />
             <Route path="/myProfile/settings" element={<Settings />} />
             <Route path="*" element={<NotFound />} />

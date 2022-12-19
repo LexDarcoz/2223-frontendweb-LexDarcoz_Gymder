@@ -45,13 +45,16 @@ export default function AddGym() {
   if (isAuthenticated) {
     return (
       <section
-        className="min-vh-100 mb-3 h-100 container under-Navbar mt-2 "
+        className="min-vh-100 mb-3 h-100 container"
         id="UnderNav"
         style={{ backgroundcolor: " #eee" }}
       >
         <div>
-          <div className="row d-flex justify-content-center align-items-center h-100 ">
-            <div className="col-lg-12 col-xl-11 ">
+          <div
+            id="UnderNav"
+            className="row d-flex justify-content-center align--center  h-100 "
+          >
+            <div className="col-lg-12 col-xl-11 mt-4 ">
               <div
                 className="text-white bg-dark bg-gradient"
                 style={{ borderRadius: "15px" }}

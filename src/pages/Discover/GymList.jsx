@@ -1,15 +1,19 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import useGym from "../../api/Gym";
 import AuthLanding from "../../components/authentication/AuthLanding";
 import GymCard from "../../components/gymTools/GymCard";
 
 export default function GymList() {
   const gymApi = useGym();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [GymList, setGymList] = useState([]);
+  function handleClick(id) {
+    return navigate(`/detailsGym/${id}`);
+  }
 
   useEffect(() => {
     const fetchGyms = async () => {
@@ -27,10 +31,12 @@ export default function GymList() {
           return (
             <GymCard
               name={gym.name}
+              id={gym.id}
               description={gym.description}
               gymRating={gym.rating}
               image={gym.image}
               key={gym.id}
+              handleClick={handleClick}
             />
           );
         })}

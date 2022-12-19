@@ -9,21 +9,9 @@ export default function UserList() {
   const userApi = useUser();
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    // (async () => {
-    //   let userData;
-    //   try {
-    //     const response = await fetch("https://randomuser.me/api/?results=12");
-    //     userData = (await response.json()).results;
-    //   } catch (error) {
-    //     console.log(error);
-    //     userData = [];
-    //   }
-    //   setUsers(userData);
-    // })();
     const fetchUsers = async () => {
       const data = await userApi.getAll();
       setUsers([...data]);
-      console.log(data);
     };
     fetchUsers();
   }, [userApi]);
