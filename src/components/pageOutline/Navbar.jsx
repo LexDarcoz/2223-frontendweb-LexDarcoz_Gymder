@@ -13,7 +13,10 @@ export default function Navbar(props) {
   const path = pathname === "/";
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      id="navbar"
+    >
       <div className="container">
         {path ? (
           <a className="navbar-brand" href="/#">

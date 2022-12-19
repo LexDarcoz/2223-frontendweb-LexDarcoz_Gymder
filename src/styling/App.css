@@ -177,5 +177,22 @@ body {
   border-radius: 15px;
 }
 #UnderNav {
-  margin-top: 100px;
+  margin-top: 70px;
+}
+#light {
+}
+#dark {
+  background-color: rgb(59, 59, 59);
+}
+#dark .navbar {
+  background-color: rgb(59, 59, 59);
+  color: white;
+}
+#dark {
+  background-color: rgb(59, 59, 59);
+  color: white;
+}
+#dark .card {
+  background-color: rgb(125, 124, 124);
+  color: black;
 }

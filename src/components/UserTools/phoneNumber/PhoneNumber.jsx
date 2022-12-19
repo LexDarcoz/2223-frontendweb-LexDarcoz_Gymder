@@ -1,9 +1,12 @@
 import "./PhoneNumber.css";
-export default function PhoneNumber({ number, type }) {
+export default function PhoneNumber({ userData }) {
   return (
     <div className="phoneNumber">
       <p>
-        {type}: {number}
+        Mobile:+
+        {userData.phoneNumber
+          ? userData.phoneNumber
+          : "Information not available"}
       </p>
     </div>
   );

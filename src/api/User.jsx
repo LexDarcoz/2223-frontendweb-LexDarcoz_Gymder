@@ -15,7 +15,7 @@ const useUser = () => {
       },
     });
 
-    return data.items;
+    return data.data;
   }, [getAccessTokenSilently]);
 
   const getByAuthId = useCallback(async () => {

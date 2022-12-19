@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import Navbar from "./components/pageOutline/Navbar";
 import ContactForm from "./pages/contactForm/ContactForm";
 import MyGym from "./pages/myGym/MyGym";
@@ -14,6 +14,7 @@ import LandingPage from "./pages/LandingPage";
 import Discover from "./pages/Discover/Discover";
 import ScrollToTop from "./components/tools/ScrollToTop";
 import Settings from "./pages/settings/Settings";
+export const ThemeContext = createContext(null);
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
@@ -21,26 +22,34 @@ function App() {
   function languageFunct(language) {
     setLocale(language);
   }
-  return (
-    <>
-      <I18nProvider locale={locale}>
-        <Navbar languageFunct={languageFunct} />
-        <ScrollToTop />
-        <Routes>
-          <Route index element={<LandingPage />} />
-          <Route path="contactForm" element={<ContactForm />} />
-          <Route path="login" element={<AuthLanding />} />
-          <Route path="myGym" element={<MyGym />} />
-          <Route path="myProfile" element={<MyProfile />} />
-          <Route path="addGym" element={<AddGym />} />
-          <Route path="discover" element={<Discover />} />
-          <Route path="/myProfile/settings" element={<Settings />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+  const [theme, setTheme] = useState("light");
 
-        <Footer />
-      </I18nProvider>
-    </>
+  const toggleTheme = () => {
+    setTheme((curr) => (curr === "light" ? "dark" : "light"));
+  };
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div id={theme}>
+        <I18nProvider locale={locale}>
+          <Navbar languageFunct={languageFunct} />
+          <ScrollToTop />
+          <Routes>
+            <Route index element={<LandingPage />} />
+            <Route path="contactForm" element={<ContactForm />} />
+            <Route path="login" element={<AuthLanding />} />
+            <Route path="myGym" element={<MyGym />} />
+            <Route path="myProfile" element={<MyProfile />} />
+            <Route path="addGym" element={<AddGym />} />
+            <Route path="discover" element={<Discover />} />
+            <Route path="/myProfile/settings" element={<Settings />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+
+          <Footer />
+        </I18nProvider>
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

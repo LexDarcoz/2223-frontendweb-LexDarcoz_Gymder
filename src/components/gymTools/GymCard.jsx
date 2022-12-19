@@ -8,7 +8,6 @@ export default function GymCard({
   image,
   handleClick,
 }) {
-  console.log(image);
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
   return (

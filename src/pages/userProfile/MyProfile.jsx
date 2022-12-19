@@ -1,15 +1,20 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+
 import useUser from "../../api/User";
 import AuthLanding from "../../components/authentication/AuthLanding";
+import LightModeIcon from "@mui/icons-material/LightMode";
 import "./myProfile.css";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
+import { ThemeContext } from "../../App";
 export default function MyProfile() {
   const { isAuthenticated, user } = useAuth0();
   const [open, setOpen] = useState(false);
   const [userProfile, setUserProfile] = useState([]);
 
   const userApi = useUser();
-
+  const theme = useContext(ThemeContext);
+  console.log(theme.theme);
   const TooltipActivation = () => {
     setOpen(true);
   };
@@ -54,7 +59,7 @@ export default function MyProfile() {
     return (
       <form
         onSubmit={updateProfile}
-        className="container vh-100 h-100 w-100 "
+        className="container min-vh-100 h-100 w-100"
         id="UnderNav"
       >
         <div className="row gutters">
@@ -72,6 +77,14 @@ export default function MyProfile() {
                   <div className="about">
                     <h5 className="mb-2 text-primary">About</h5>
                     <p>{user.text ? user.text : "I do not have a bio yet!"}</p>
+                    <p></p>
+                    <p onClick={() => theme.toggleTheme()}>
+                      {theme.theme === "dark" ? (
+                        <DarkModeIcon />
+                      ) : (
+                        <LightModeIcon />
+                      )}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -84,6 +97,7 @@ export default function MyProfile() {
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <h6 className="mb-3 text-primary">Personal Details</h6>
                   </div>
+
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
                       <label htmlFor="fullName">Full Name</label>
@@ -118,6 +132,39 @@ export default function MyProfile() {
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="phone">Country</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="phone"
+                        placeholder="Enter phone number"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="phone">State</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="phone"
+                        placeholder="Enter phone number"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div className="form-group">
+                      <label htmlFor="phone">State</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="phone"
+                        placeholder="Enter phone number"
+                      />
+                    </div>
+                  </div>
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div className="form-group">
                       <label htmlFor="phone">Bio</label>
                       <input

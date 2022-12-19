@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import Settings from "@mui/icons-material/Settings";
+import AddCommentIcon from "@mui/icons-material/AddComment";
 import Logout from "@mui/icons-material/Logout";
 import {
   Avatar,
@@ -11,7 +12,7 @@ import {
   MenuItem,
   Tooltip,
 } from "@mui/material";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { Link } from "react-router-dom";
@@ -32,7 +33,7 @@ export default function AuthenticationButton(prop) {
       setAnchorEl(null);
     };
     return (
-      <React.Fragment>
+      <Fragment>
         <Box
           sx={{ display: "flex", alignItems: "center", textAlign: "center" }}
         >
@@ -88,19 +89,19 @@ export default function AuthenticationButton(prop) {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           <MenuItem>
-            <Link className="nav-link d-flex" to="/myProfile">
-              <Avatar sx={{ width: 32, height: 32 }}>
-                <img src={picture} alt="ProfilePicture" />
-              </Avatar>
-              Profile
-            </Link>
-          </MenuItem>
-          <MenuItem>
             <Link className="nav-link d-flex" to="/myGym">
               <Avatar sx={{ width: 32, height: 32 }}>
                 <img src={picture} alt="ProfilePicture" />
               </Avatar>
               My Gym
+            </Link>
+          </MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <AddCommentIcon fontSize="small" />
+            </ListItemIcon>
+            <Link className="nav-link d-flex" to="/addGym">
+              Add a gym!
             </Link>
           </MenuItem>
           <Divider />
@@ -120,7 +121,7 @@ export default function AuthenticationButton(prop) {
             <LogoutButton />
           </MenuItem>
         </Menu>
-      </React.Fragment>
+      </Fragment>
     );
   }
 
