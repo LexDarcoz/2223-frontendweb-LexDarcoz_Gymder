@@ -32,6 +32,9 @@ export default function GymList() {
             <GymCard
               name={gym.name}
               id={gym.id}
+              owner={gym.owner}
+              address={gym.address}
+              emailAddress={gym.emailAddress}
               description={gym.description}
               gymRating={gym.rating}
               image={gym.image}

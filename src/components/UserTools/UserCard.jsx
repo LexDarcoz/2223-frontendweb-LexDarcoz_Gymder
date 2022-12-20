@@ -4,11 +4,12 @@ import NoImageYet from "../../images/logo/NoImageYet.jpg";
 import "./UserCard.css";
 
 const baseUrl = process.env.REACT_APP_BASE_URL;
-export default function UserCard({ userData }) {
+export default function UserCard({ userData, handleClick }) {
   return (
     <div
       className="card col-lg-2 col-md-5 col-12 p-3 m-3  "
       style={{ minHeight: "150px" }}
+      onClick={() => handleClick(userData.id)}
     >
       <div className="card_title">
         {userData.fullName}
@@ -29,7 +30,7 @@ export default function UserCard({ userData }) {
               src={
                 userData.image
                   ? `${baseUrl}/${userData.image}`
-                  : `${NoImageYet}`
+                  : `${NoImageYet}? `
               }
             />
           </div>

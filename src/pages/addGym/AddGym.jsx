@@ -27,15 +27,16 @@ export default function AddGym() {
     data.append("name", e.target[0].value);
     data.append("emailAddress", e.target[1].value);
     data.append("owner", e.target[2].value);
-    data.append("description", e.target[3].value);
-    data.append("image", e.target[4].files[0]);
+    data.append("address", e.target[3].value);
+    data.append("description", e.target[4].value);
+    data.append("image", e.target[5].files[0]);
 
-    console.log(data.get("image"));
     TooltipActivation();
     await gymApi.save({
       name: data.get("name"),
       emailAddress: data.get("emailAddress"),
       owner: data.get("owner"),
+      address: data.get("address"),
       description: data.get("description"),
       image: data.get("image"),
     });
@@ -68,14 +69,9 @@ export default function AddGym() {
 
                       <form className="mx-1 mx-md-4" onSubmit={addGym}>
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                          <i className="fas fa-id-card fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example1c"
-                            >
-                              Gym name
-                            </label>
+                            <label className="form-label">Gym name</label>
                             <input
                               type="text"
                               id="form3Example1c"
@@ -86,12 +82,7 @@ export default function AddGym() {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example3c"
-                            >
-                              E-mail
-                            </label>
+                            <label className="form-label">E-mail</label>
                             <input
                               type="email"
                               required
@@ -102,26 +93,23 @@ export default function AddGym() {
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                          <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example4c"
-                            >
-                              Owner
-                            </label>
+                            <label className="form-label">Owner</label>
                             <input type="text" className="form-control" />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
-                          <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                          <i className="fas fa-map-marker fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label
-                              className="form-label"
-                              htmlFor="form3Example4cd"
-                            >
-                              Additional info
-                            </label>
+                            <label className="form-label">Address</label>
+                            <input type="text" className="form-control" />
+                          </div>
+                        </div>
+                        <div className="d-flex flex-row align-items-center mb-4">
+                          <i className="fas fa-address-book fa-lg me-3 fa-fw"></i>
+                          <div className="form-outline flex-fill mb-0">
+                            <label className="form-label">Description</label>
                             <textarea
                               className="form-control"
                               name="AdditionalInfo"
@@ -133,6 +121,11 @@ export default function AddGym() {
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
+                          <i
+                            class="fa fa-camera fa-lg me-3 fa-fw"
+                            aria-hidden="true"
+                          ></i>
+
                           <div className="form-outline flex-fill mb-0">
                             <input
                               className="form-control"
@@ -142,22 +135,7 @@ export default function AddGym() {
                             />
                           </div>
                         </div>
-                        <div className="form-check d-flex justify-content-center mb-5 ">
-                          <input
-                            className="form-check-input me-2  fs-6"
-                            type="checkbox"
-                            value=""
-                            id="form2Example3c"
-                            required
-                          />
-                          <label
-                            className="form-check-label fs-6 "
-                            htmlFor="form2Example3"
-                          >
-                            I agree all statements in{" "}
-                            <a href="#!">Terms of service</a>
-                          </label>
-                        </div>
+
                         <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                           <button type="reset" className="btn btn-secondary">
                             Cancel

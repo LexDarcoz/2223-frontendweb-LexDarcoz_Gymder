@@ -1,74 +1,28 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext, useEffect, useState } from "react";
-
-import useUser from "../../../api/User";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import AuthLanding from "../../../components/authentication/AuthLanding";
-import LightModeIcon from "@mui/icons-material/LightMode";
-import "./myProfile.css";
-import DarkModeIcon from "@mui/icons-material/DarkMode";
-import { ThemeContext } from "../../../App";
-export default function MyProfile() {
-  const { isAuthenticated, user } = useAuth0();
-  const [open, setOpen] = useState(false);
-  const [userProfile, setUserProfile] = useState([]);
-
+import NoImageYet from "../../../images/logo/NoImageYet.jpg";
+import "./detailsUser.css";
+import useUser from "../../../api/User";
+export default function DetailsGym() {
   const userApi = useUser();
-  const theme = useContext(ThemeContext);
-
-  const TooltipActivation = () => {
-    setOpen(true);
-  };
-
+  const { id } = useParams();
+  const [user, setUser] = useState("");
+  const baseUrl = process.env.REACT_APP_BASE_URL;
+  const { isAuthenticated } = useAuth0();
+  const navigate = useNavigate();
   useEffect(() => {
-    const fetchUser = async () => {
-      const userProfile = await userApi.getByAuthId();
-      setUserProfile([...userProfile]);
+    const fetchGyms = async () => {
+      const data = await userApi.getById(id);
+      setUser(data);
     };
-    fetchUser();
-  }, [userApi]);
-
-  const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
-      return;
-    }
-    setOpen(false);
-  };
-
-  async function updateProfile(e) {
-    e.preventDefault();
-
-    const data = new FormData();
-
-    data.append("name", e.target[0].value);
-    data.append("emailAddress", e.target[1].value);
-    data.append("phone", e.target[2].value);
-    data.append("country", e.target[3].value);
-    data.append("state", e.target[4].value);
-    data.append("city", e.target[5].value);
-    data.append("bio", e.target[6].value);
-
-    TooltipActivation();
-
-    await userApi.save({
-      name: data.get("name") ? data.get("name") : user.name,
-      emailAddress: data.get("emailAddress")
-        ? data.get("emailAddress")
-        : user.emailAddress,
-      phone: data.get("phone") ? data.get("phone") : user.phone,
-      country: data.get("country") ? data.get("country") : user.country,
-      state: data.get("state") ? data.get("state") : user.state,
-      city: data.get("city") ? data.get("city") : user.city,
-      bio: data.get("bio") ? data.get("bio") : user.bio,
-    });
-  }
+    fetchGyms();
+  }, [id, userApi]);
 
   if (isAuthenticated) {
     return (
-      <form
-        onSubmit={updateProfile}
-        className="container min-vh-100 h-100 w-100"
-        id="UnderNav"
-      >
+      <form className="container min-vh-100 h-100 w-100" id="UnderNav">
         <div className="row gutters">
           <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div className="card h-100">
@@ -76,21 +30,25 @@ export default function MyProfile() {
                 <div className="account-settings">
                   <div className="user-profile">
                     <div className="user-avatar">
-                      <img src={user.picture} alt="User profile pic" />
+                      <img
+                        src={
+                          user.image
+                            ? `${baseUrl}/${user.image}`
+                            : `${NoImageYet}? `
+                        }
+                        alt="User profile pic"
+                      />
                     </div>
-                    <h5 className="user-name">{user.name}</h5>
-                    <h6 className="user-email">{user.given_name}</h6>
+                    <h5 className="user-name">
+                      {user.fullName
+                        ? user.fullName
+                        : "You do not have a name yet"}
+                    </h5>
                   </div>
                   <div className="about">
                     <h5 className="mb-2 text-primary">About</h5>
-                    <p>{user.text ? user.text : "I do not have a bio yet!"}</p>
-                    <p></p>
-                    <p onClick={() => theme.toggleTheme()}>
-                      {theme.theme === "dark" ? (
-                        <DarkModeIcon />
-                      ) : (
-                        <LightModeIcon />
-                      )}
+                    <p>
+                      {user.bio ? user.bio : "This user has not set his bio"}
                     </p>
                   </div>
                 </div>
@@ -112,7 +70,12 @@ export default function MyProfile() {
                         type="text"
                         className="form-control"
                         id="fullName"
-                        placeholder="Enter full name"
+                        placeholder={
+                          user.fullName
+                            ? user.fullName
+                            : "This user has not set his full name"
+                        }
+                        readOnly
                       />
                     </div>
                   </div>
@@ -123,7 +86,12 @@ export default function MyProfile() {
                         type="email"
                         className="form-control"
                         id="eMail"
-                        placeholder="Enter email ID"
+                        placeholder={
+                          user.emailAddress
+                            ? user.emailAddress
+                            : "This user has not set his email"
+                        }
+                        readOnly
                       />
                     </div>
                   </div>
@@ -134,7 +102,12 @@ export default function MyProfile() {
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder="Enter phone number"
+                        placeholder={
+                          user.phoneNumber
+                            ? user.phoneNumber
+                            : "This user has not set his phone number"
+                        }
+                        readOnly
                       />
                     </div>
                   </div>
@@ -145,7 +118,12 @@ export default function MyProfile() {
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder="Enter phone number"
+                        placeholder={
+                          user.country
+                            ? user.country
+                            : "This user has not set his country"
+                        }
+                        readOnly
                       />
                     </div>
                   </div>
@@ -156,7 +134,12 @@ export default function MyProfile() {
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder="Enter phone number"
+                        placeholder={
+                          user.state
+                            ? user.state
+                            : "This user has not set his state"
+                        }
+                        readOnly
                       />
                     </div>
                   </div>
@@ -167,31 +150,23 @@ export default function MyProfile() {
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder="Enter phone number"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div className="form-group">
-                      <label htmlFor="phone">Bio</label>
-                      <input
-                        type="text"
-                        className="form-control"
                         placeholder={
-                          user.bio ? user.bio : "Enter your bio here!"
+                          user.city
+                            ? user.city
+                            : "This user has not set his city"
                         }
+                        readOnly
                       />
                     </div>
                   </div>
-                </div>
-
-                <div className="row gutters">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <div className="text-right">
-                      <button type="reset" className="btn btn-secondary">
-                        Cancel
+                    <div className="text-end">
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => navigate("/discover")}
+                      >
+                        Go back
                       </button>
-                      <button className="btn btn-primary">Update</button>
                     </div>
                   </div>
                 </div>

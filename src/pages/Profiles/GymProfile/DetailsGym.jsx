@@ -1,15 +1,24 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Rating, Typography } from "@mui/material";
+import GymRatingReadOnlyComponent from "../../../components/tools/GymRatingReadOnlyComponent";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useGym from "../../../api/Gym";
 import AuthLanding from "../../../components/authentication/AuthLanding";
 import "./detailsGym.css";
+import { Rating, Typography } from "@mui/material";
 export default function DetailsGym() {
   const gymApi = useGym();
   const { id } = useParams();
+  const navigate = useNavigate();
   const [gym, setGym] = useState("");
-
+  const [value, setValue] = useState();
+  function waitForElement() {
+    if (typeof gym.rating !== "undefined") {
+      return true;
+    } else {
+      setTimeout(waitForElement, 50);
+    }
+  }
   useEffect(() => {
     const fetchGyms = async () => {
       const data = await gymApi.getById(id);
@@ -19,10 +28,10 @@ export default function DetailsGym() {
   }, [id, gymApi]);
   const baseUrl = process.env.REACT_APP_BASE_URL;
   const { isAuthenticated } = useAuth0();
-  const [value, setValue] = useState();
+
   if (isAuthenticated) {
     return (
-      <form className="container min-vh-100 h-100 w-100" id="UnderNav">
+      <form className="container min-vh-100 h-100 w-100 mb-5" id="UnderNav">
         <div className="row gutters">
           <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
             <div className="card h-100">
@@ -37,12 +46,12 @@ export default function DetailsGym() {
                               ? `${baseUrl}/${gym.image}`
                               : `${gym.NoImageYet}`
                           }
-                          alt="User profile pic"
+                          alt="Gym profile"
                         />
                       </div>
                     </div>
-                    <h5 className="gym-name">{}</h5>
-                    <h6 className="gym-email">{}</h6>
+                    <h5 className="gym-name">{gym.name}</h5>
+                    <h6 className="gym-email">{gym.emailAddress}</h6>
                   </div>
                   <div className="about">
                     <h5 className="mb-2 text-primary">About</h5>
@@ -51,6 +60,12 @@ export default function DetailsGym() {
                         ? gym.description
                         : "I do not have a bio yet!"}
                     </p>
+
+                    {waitForElement() ? (
+                      <GymRatingReadOnlyComponent gymRating={gym.rating} />
+                    ) : (
+                      "Rating not availabe at this time"
+                    )}
                   </div>
                 </div>
               </div>
@@ -66,79 +81,45 @@ export default function DetailsGym() {
 
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="fullName">Name</label>
+                      <label>Name</label>
                       <input
-                        type="text"
                         className="form-control"
-                        id="fullName"
-                        placeholder="Enter full name"
+                        placeholder={gym.name}
+                        readOnly
                       />
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="eMail">Email</label>
+                      <label>Email</label>
                       <input
-                        type="email"
                         className="form-control"
-                        id="eMail"
-                        placeholder="Enter email ID"
+                        placeholder={gym.emailAddress}
+                        readOnly
                       />
                     </div>
                   </div>
+
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Phone</label>
+                      <label>Owner</label>
                       <input
-                        type="text"
                         className="form-control"
-                        id="phone"
-                        placeholder="Enter phone number"
+                        placeholder={gym.owner}
+                        readOnly
                       />
                     </div>
                   </div>
-                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                      <label htmlFor="phone">Country</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder="Enter phone number"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                      <label htmlFor="phone">State</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder="Enter phone number"
-                      />
-                    </div>
-                  </div>
-                  <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
-                    <div className="form-group">
-                      <label htmlFor="phone">City</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder="Enter phone number"
-                      />
-                    </div>
-                  </div>
+
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Owner</label>
+                      <label>Address</label>
                       <input
-                        type="text"
                         className="form-control"
                         placeholder={
-                          gym.owner ? gym.owner : "No gym description"
+                          gym.address ? gym.address : "No gym description"
                         }
+                        readOnly
                       />
                     </div>
                   </div>
@@ -151,6 +132,16 @@ export default function DetailsGym() {
                         setValue(newValue);
                       }}
                     />
+                  </div>
+                  <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div className="text-end">
+                      <button
+                        className="btn btn-primary"
+                        onClick={() => navigate("/discover")}
+                      >
+                        Go back
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

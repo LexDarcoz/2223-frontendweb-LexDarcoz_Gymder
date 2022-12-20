@@ -19,6 +19,19 @@ const useUser = () => {
     return data.data;
   }, [getAccessTokenSilently]);
 
+  const getById = useCallback(
+    async (id) => {
+      const token = await getAccessTokenSilently();
+      const { data } = await axios.get(`${baseUrl}/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return data;
+    },
+    [getAccessTokenSilently]
+  );
+
   const getByAuthId = useCallback(async () => {
     const token = await getAccessTokenSilently();
     const { data } = await axios.get(`${baseUrl}/current`, {
@@ -58,8 +71,8 @@ const useUser = () => {
   );
 
   const userApi = useMemo(
-    () => ({ getAll, getByAuthId, save, deleteById }),
-    [getAll, save, getByAuthId, deleteById]
+    () => ({ getAll, getByAuthId, save, getById, deleteById }),
+    [getAll, save, getByAuthId, getById, deleteById]
   );
 
   return userApi;

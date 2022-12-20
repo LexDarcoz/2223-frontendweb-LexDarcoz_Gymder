@@ -3,7 +3,7 @@ import React, { createContext, useState } from "react";
 import Navbar from "./components/pageOutline/Navbar";
 import ContactForm from "./pages/contactForm/ContactForm";
 import MyGym from "./pages/myGym/MyGym";
-import MyProfile from "./pages/Profiles/UserProfiles/MyProfile";
+
 import "./styling/App.css";
 import NotFound from "./components/tools/NotFound";
 import { I18nProvider, LOCALES } from "./Translation/i18n";
@@ -15,11 +15,13 @@ import Discover from "./pages/Discover/Discover";
 import ScrollToTop from "./components/tools/ScrollToTop";
 import Settings from "./pages/settings/Settings";
 import DetailsGym from "./pages/Profiles/GymProfile/DetailsGym";
+import DetailsUser from "./pages/Profiles/UserProfiles/DetailsUser";
+import { useAuth0 } from "@auth0/auth0-react";
 export const ThemeContext = createContext(null);
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
-
+  const { isAuthenticated } = useAuth0();
   function languageFunct(language) {
     setLocale(language);
   }
@@ -40,9 +42,9 @@ function App() {
             <Route path="contactForm" element={<ContactForm />} />
             <Route path="login" element={<AuthLanding />} />
             <Route path="myGym" element={<MyGym />} />
-            <Route path="myProfile" element={<MyProfile />} />
             <Route path="addGym" element={<AddGym />} />
             <Route path="detailsGym/:id" element={<DetailsGym />} />
+            <Route path="detailsUser/:id" element={<DetailsUser />} />
             <Route path="discover" element={<Discover />} />
             <Route path="/myProfile/settings" element={<Settings />} />
             <Route path="*" element={<NotFound />} />

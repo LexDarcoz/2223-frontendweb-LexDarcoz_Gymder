@@ -39,7 +39,7 @@ export default function GymListTopThree() {
             return (
               <GymCard
                 name={element.name}
-                description={element.description}
+                address={element.address}
                 gymRating={element.rating}
                 image={element.image}
                 key={element.id}

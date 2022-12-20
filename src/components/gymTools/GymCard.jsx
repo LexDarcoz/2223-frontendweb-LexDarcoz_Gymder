@@ -2,11 +2,14 @@ import GymRatingReadOnlyComponent from "../tools/GymRatingReadOnlyComponent";
 import NoImageYet from "../../images/logo/NoImageYet.jpg";
 export default function GymCard({
   name,
+  owner,
+  emailAddress,
   description,
+  address,
   gymRating,
-  id,
   image,
   handleClick,
+  id,
 }) {
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
@@ -26,7 +29,7 @@ export default function GymCard({
             src={image ? `${baseUrl}/${image}` : `${NoImageYet}`}
           />
           <h3 className="card-title py-2">{name}</h3>
-          <p className="card-text">{description}</p>
+          <p className="card-text">{address}</p>
 
           <GymRatingReadOnlyComponent gymRating={gymRating} />
 
