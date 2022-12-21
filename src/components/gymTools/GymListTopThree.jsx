@@ -3,11 +3,11 @@ import useGym from "../../api/Gym";
 import { useState } from "react";
 import { useEffect } from "react";
 import GymCard from "./GymCard";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function GymListTopThree() {
   const gymApi = useGym();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [top3, setTop3] = useState([]);
 
@@ -20,9 +20,9 @@ export default function GymListTopThree() {
     fetchGyms();
   }, [gymApi]);
 
-  // function handleClick(id) {
-  //   navigate(`/giveRating/${id}`);
-  // }
+  function handleClick(id) {
+    navigate(`/detailsGym/${id}`);
+  }
 
   return (
     <section className="team section-padding" id="ranking">
@@ -42,7 +42,9 @@ export default function GymListTopThree() {
                 address={element.address}
                 gymRating={element.rating}
                 image={element.image}
+                handleClick={handleClick}
                 key={element.id}
+                id={element.id}
               />
             );
           })}

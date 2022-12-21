@@ -15,12 +15,12 @@ import {
 import React, { Fragment, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function AuthenticationButton(prop) {
   const { isAuthenticated, user } = useAuth0();
   const [anchorEl, setAnchorEl] = useState(null);
-
+  const navigate = useNavigate();
   if (isAuthenticated) {
     const { picture } = user;
 
@@ -32,6 +32,9 @@ export default function AuthenticationButton(prop) {
     const handleClose = () => {
       setAnchorEl(null);
     };
+    function NavigateTo(navigation) {
+      navigate(navigation);
+    }
     return (
       <Fragment>
         <Box
@@ -88,31 +91,30 @@ export default function AuthenticationButton(prop) {
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
-          <MenuItem>
-            <Link className="nav-link d-flex" to="/myGym">
+          <MenuItem onClick={() => NavigateTo("/myGym")}>
+            <p className="nav-link d-flex" to="/myGym">
               <Avatar sx={{ width: 32, height: 32 }}>
                 <img src={picture} alt="ProfilePicture" />
               </Avatar>
               My Gym
-            </Link>
+            </p>
           </MenuItem>
-          <MenuItem>
+          <MenuItem onClick={() => NavigateTo("/addGym")}>
             <ListItemIcon>
               <AddCommentIcon fontSize="small" />
             </ListItemIcon>
-            <Link className="nav-link d-flex" to="/addGym">
+            <p className="nav-link d-flex" to="/addGym">
               Add a gym!
-            </Link>
+            </p>
           </MenuItem>
           <Divider />
-
-          <MenuItem>
-            <Link className="nav-link" to="/myProfile/settings">
+          <MenuItem onClick={() => NavigateTo("/myProfile/settings")}>
+            <p className="nav-link" to="/myProfile/settings">
               <ListItemIcon>
                 <Settings fontSize="small" />
               </ListItemIcon>
               Settings
-            </Link>
+            </p>
           </MenuItem>
           <MenuItem>
             <ListItemIcon>

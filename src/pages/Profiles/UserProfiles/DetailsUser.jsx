@@ -25,7 +25,7 @@ export default function DetailsGym() {
       <form className="container min-vh-100 h-100 w-100" id="UnderNav">
         <div className="row gutters">
           <div className="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
-            <div className="card h-100">
+            <div className="card p-0">
               <div className="card-body">
                 <div className="account-settings">
                   <div className="user-profile">
@@ -56,7 +56,7 @@ export default function DetailsGym() {
             </div>
           </div>
           <div className="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
-            <div className="card h-100">
+            <div className="card p-0">
               <div className="card-body">
                 <div className="row gutters">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -65,98 +65,74 @@ export default function DetailsGym() {
 
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="fullName">Full Name</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="fullName"
-                        placeholder={
-                          user.fullName
-                            ? user.fullName
-                            : "This user has not set his full name"
-                        }
-                        readOnly
-                      />
+                      <label>
+                        <strong>Full Name:</strong>{" "}
+                      </label>
+                      <p>
+                        {user.fullName
+                          ? user.fullName
+                          : "This user has not set his full name"}
+                      </p>
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="eMail">Email</label>
-                      <input
-                        type="email"
-                        className="form-control"
-                        id="eMail"
-                        placeholder={
-                          user.emailAddress
-                            ? user.emailAddress
-                            : "This user has not set his email"
-                        }
-                        readOnly
-                      />
+                      <label>
+                        <strong>Email: </strong>{" "}
+                      </label>
+                      <p>
+                        {user.emailAddress
+                          ? user.emailAddress
+                          : "This user has not set his email"}
+                      </p>
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Phone</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder={
-                          user.phoneNumber
-                            ? user.phoneNumber
-                            : "This user has not set his phone number"
-                        }
-                        readOnly
-                      />
+                      <label>
+                        <strong>Phone:</strong>{" "}
+                      </label>
+                      <p>
+                        {user.phoneNumber
+                          ? user.phoneNumber
+                          : "This user has not set his phone number"}
+                      </p>
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Country</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder={
-                          user.country
-                            ? user.country
-                            : "This user has not set his country"
-                        }
-                        readOnly
-                      />
+                      <label>
+                        <strong>Country:</strong>{" "}
+                      </label>
+                      <p>
+                        {user.country
+                          ? user.country
+                          : "This user has not set his country"}
+                      </p>
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">State</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder={
-                          user.state
-                            ? user.state
-                            : "This user has not set his state"
-                        }
-                        readOnly
-                      />
+                      <label>
+                        <strong>State:</strong>
+                      </label>
+                      <p>
+                        {user.state
+                          ? user.state
+                          : "This user has not set his state"}
+                      </p>
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">City</label>
-                      <input
-                        type="text"
-                        className="form-control"
-                        id="phone"
-                        placeholder={
-                          user.city
-                            ? user.city
-                            : "This user has not set his city"
-                        }
-                        readOnly
-                      />
+                      <label>
+                        <strong> City:</strong>
+                      </label>
+                      <p>
+                        {user.city
+                          ? user.city
+                          : "This user has not set his city"}
+                      </p>
                     </div>
                   </div>
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">

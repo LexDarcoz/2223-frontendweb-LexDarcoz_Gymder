@@ -10,13 +10,21 @@ export default function GymCard({
   image,
   handleClick,
   id,
+  deleteById,
 }) {
   const baseUrl = process.env.REACT_APP_BASE_URL;
 
   return (
-    <div className="col-12 col-md-6 col-lg-4" onClick={() => handleClick(id)}>
+    <div className="col-12 col-md-6 col-lg-4">
       <div className="card text-center me-1" style={{ minHeight: "560px" }}>
-        <div className="card-body">
+        {deleteById ? (
+          <i
+            class="fas fa-times"
+            aria-hidden="true"
+            onClick={() => deleteById(id)}
+          ></i>
+        ) : null}
+        <div className="card-body" onClick={() => handleClick(id)}>
           <img
             alt=""
             className="img-fluid rounded-circle"

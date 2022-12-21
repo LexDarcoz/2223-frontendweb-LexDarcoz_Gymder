@@ -18,33 +18,30 @@ export default function GymList() {
   useEffect(() => {
     const fetchGyms = async () => {
       const data = await gymApi.getAll();
+      console.log(data);
       setGymList([...data]);
     };
     fetchGyms();
   }, [gymApi]);
 
-  const { isAuthenticated } = useAuth0();
-  if (isAuthenticated) {
-    return (
-      <div className="row justify-content-center text-center">
-        {GymList.map((gym) => {
-          return (
-            <GymCard
-              name={gym.name}
-              id={gym.id}
-              owner={gym.owner}
-              address={gym.address}
-              emailAddress={gym.emailAddress}
-              description={gym.description}
-              gymRating={gym.rating}
-              image={gym.image}
-              key={gym.id}
-              handleClick={handleClick}
-            />
-          );
-        })}
-      </div>
-    );
-  }
-  return <AuthLanding />;
+  return (
+    <div className="row justify-content-center text-center">
+      {GymList.map((gym) => {
+        return (
+          <GymCard
+            name={gym.name}
+            id={gym.id}
+            owner={gym.owner}
+            address={gym.address}
+            emailAddress={gym.emailAddress}
+            description={gym.description}
+            gymRating={gym.rating}
+            image={gym.image}
+            key={gym.id}
+            handleClick={handleClick}
+          />
+        );
+      })}
+    </div>
+  );
 }
