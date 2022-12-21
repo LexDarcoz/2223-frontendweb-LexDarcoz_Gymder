@@ -132,12 +132,12 @@ export default function DetailsGym() {
                   </div>
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div className="text-end">
-                      <button
+                      <p
                         className="btn btn-primary  m-2"
-                        onClick={() => addGymToUser(id)}
+                        onClick={() => addGymToUser(gym.id)}
                       >
                         Add Gym
-                      </button>
+                      </p>
                       <button
                         className="btn btn-primary m-2"
                         onClick={() => navigate("/discover")}

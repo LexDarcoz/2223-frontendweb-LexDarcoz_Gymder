@@ -34,14 +34,15 @@ const useGym = () => {
   const save = useCallback(
     async (gym) => {
       const token = await getAccessTokenSilently();
+
       const { id, ...values } = gym;
+
       await axios({
-        method: id ? "PUT" : "POST",
-        url: `${baseUrl}/${id ?? ""}`,
+        method: "POST",
+        url: baseUrl,
         data: values,
         headers: {
           Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
         },
       });
     },

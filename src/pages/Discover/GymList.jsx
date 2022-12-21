@@ -1,9 +1,7 @@
-import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import useGym from "../../api/Gym";
-import AuthLanding from "../../components/authentication/AuthLanding";
 import GymCard from "../../components/gymTools/GymCard";
 
 export default function GymList() {

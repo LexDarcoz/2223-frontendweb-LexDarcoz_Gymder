@@ -18,6 +18,7 @@ export default function MyGym() {
   useEffect(() => {
     const fetchGyms = async () => {
       const { data } = await userGymApi.getAll();
+      console.log(data);
       let gymIds = [];
       data.forEach((element) => {
         gymIds.push(element.gymId);
@@ -37,7 +38,6 @@ export default function MyGym() {
     userGymApi.deleteById(id);
   }
 
-  console.log(GymList);
   const { isAuthenticated } = useAuth0();
   if (isAuthenticated) {
     if (GymList <= 0) {
