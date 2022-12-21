@@ -49,21 +49,9 @@ const useGym = () => {
     [getAccessTokenSilently]
   );
 
-  const deleteById = useCallback(
-    async (id) => {
-      const token = await getAccessTokenSilently();
-      await axios.delete(`${baseUrl}/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-    },
-    [getAccessTokenSilently]
-  );
-
   const gymApi = useMemo(
-    () => ({ getAll, getById, save, deleteById }),
-    [getAll, save, getById, deleteById]
+    () => ({ getAll, getById, save }),
+    [getAll, save, getById]
   );
 
   return gymApi;

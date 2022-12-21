@@ -8,6 +8,7 @@ import "./myProfile.css";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { ThemeContext } from "../../../App";
 import ToolTip from "../../../components/tools/ToolTip";
+import Transl from "../../../Translation/i18n/translate";
 export default function MyProfile() {
   const { isAuthenticated, user } = useAuth0();
   const [open, setOpen] = useState(false);
@@ -99,17 +100,15 @@ export default function MyProfile() {
                       <img src={user.picture} alt="User profile pic" />
                     </div>
                     <h5 className="user-name">
-                      {fullName ? fullName : "You do not have a name yet"}
+                      {fullName ? fullName : Transl("NoProfileFullName")}
                     </h5>
                     <h6 className="user-email">
-                      {emailAddress
-                        ? emailAddress
-                        : "You do not have an email address yet"}
+                      {emailAddress ? emailAddress : Transl("NoProfileEmail")}
                     </h6>
                   </div>
                   <div className="about">
-                    <h5 className="mb-2 text-primary">About</h5>
-                    <p>{bio ? bio : "I do not have a bio yet!"}</p>
+                    <h5 className="mb-2 text-primary">{Transl("About")}</h5>
+                    <p>{bio ? bio : Transl("NoProfileBio")}</p>
                     <p></p>
                     <p onClick={() => theme.toggleTheme()}>
                       {theme.theme === "dark" ? (
@@ -128,94 +127,86 @@ export default function MyProfile() {
               <div className="card-body">
                 <div className="row gutters">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h6 className="mb-3 text-primary">Personal Details</h6>
+                    <h6 className="mb-3 text-primary">
+                      {Transl("PersonalDetails")}
+                    </h6>
                   </div>
 
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="fullName">Full Name</label>
+                      <label htmlFor="fullName">{Transl("FullName")}</label>
                       <input
                         type="text"
                         className="form-control"
                         id="fullName"
                         placeholder={
-                          fullName ? fullName : "Enter your full name here!"
+                          fullName ? fullName : Transl("NoProfileFullName")
                         }
                       />
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="eMail">Email</label>
+                      <label htmlFor="eMail">{Transl("Email")}</label>
                       <input
                         type="email"
                         className="form-control"
                         id="eMail"
-                        placeholder={
-                          emailAddress
-                            ? emailAddress
-                            : "Enter your e-mail here!"
-                        }
+                        placeholder={emailAddress ? emailAddress : "_____"}
                       />
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Phone</label>
+                      <label htmlFor="phone">{Transl("Phone")}</label>
                       <input
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder={
-                          phoneNumber
-                            ? phoneNumber
-                            : "Enter your phone number here!"
-                        }
+                        placeholder={phoneNumber ? phoneNumber : "_____"}
                       />
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Country</label>
+                      <label htmlFor="phone">{Transl("Country")}</label>
                       <input
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder={
-                          country ? country : "Enter your country here!"
-                        }
+                        placeholder={country ? country : "_____"}
                       />
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">State</label>
+                      <label htmlFor="phone">{Transl("State")}</label>
                       <input
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder={state ? state : "Enter your state here!"}
+                        placeholder={state ? state : "_____"}
                       />
                     </div>
                   </div>
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">City</label>
+                      <label htmlFor="phone">{Transl("City")}</label>
                       <input
                         type="text"
                         className="form-control"
                         id="phone"
-                        placeholder={city ? city : "Enter your city here!"}
+                        placeholder={city ? city : "_____"}
                       />
                     </div>
                   </div>
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div className="form-group">
-                      <label htmlFor="phone">Bio</label>
+                      <label htmlFor="phone">{Transl("Bio")}</label>
                       <input
                         type="text"
                         className="form-control"
-                        placeholder={bio ? bio : "Enter your bio here!"}
+                        placeholder={bio ? bio : "_____"}
                       />
                     </div>
                   </div>
@@ -225,9 +216,11 @@ export default function MyProfile() {
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div className="text-right">
                       <button type="reset" className="btn btn-secondary">
-                        Cancel
+                        {Transl("ClearAll")}
                       </button>
-                      <button className="btn btn-primary">Update</button>
+                      <button className="btn btn-primary">
+                        {Transl("SetProfile")}
+                      </button>
                     </div>
                   </div>
                 </div>

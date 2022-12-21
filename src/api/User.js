@@ -58,21 +58,9 @@ const useUser = () => {
     [getAccessTokenSilently]
   );
 
-  const deleteById = useCallback(
-    async (id) => {
-      const token = await getAccessTokenSilently();
-      await axios.delete(`${baseUrl}/${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-    },
-    [getAccessTokenSilently]
-  );
-
   const userApi = useMemo(
-    () => ({ getAll, getByAuthId, save, getById, deleteById }),
-    [getAll, save, getByAuthId, getById, deleteById]
+    () => ({ getAll, getByAuthId, save, getById }),
+    [getAll, save, getByAuthId, getById]
   );
 
   return userApi;

@@ -6,6 +6,7 @@ import useUserGym from "../../api/userGym";
 import AuthLanding from "../../components/authentication/AuthLanding";
 import GymCard from "../../components/gymTools/GymCard";
 import ToolTip from "../../components/tools/ToolTip";
+import Transl from "../../Translation/i18n/translate";
 
 export default function MyGym() {
   const userGymApi = useUserGym();
@@ -62,9 +63,10 @@ export default function MyGym() {
           id="UnderNav"
         >
           <h1 className="my-auto text-center ">
-            You have not added any gyms yet!
+            {Transl("NoGymYet")}
+
             <p>
-              Add them <Link to="/discover">here</Link>
+              {Transl("AddThem")} <Link to="/discover">here</Link>
             </p>
           </h1>
 

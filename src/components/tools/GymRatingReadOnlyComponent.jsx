@@ -1,4 +1,5 @@
 import { Box, Rating, Typography } from "@mui/material";
+import Transl from "../../Translation/i18n/translate";
 
 export default function GymRatingComponent({ gymRating }) {
   return (
@@ -8,11 +9,9 @@ export default function GymRatingComponent({ gymRating }) {
       }}
     >
       {gymRating === 0 ? (
-        <Typography component="legend">
-          This gym has not been rated yet
-        </Typography>
+        <Typography component="legend">{Transl("GymNotRatedYet")}</Typography>
       ) : (
-        <Typography component="legend">Current rating</Typography>
+        <Typography component="legend">{Transl("CurrentRating")}</Typography>
       )}
 
       <Rating name="read-only" value={gymRating} readOnly precision={0.5} />

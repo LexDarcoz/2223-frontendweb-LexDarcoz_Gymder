@@ -2,12 +2,16 @@ import { LOCALES } from "../locales";
 const DUTCH = {
   [LOCALES.DUTCH]: {
     //LandingPage / Carousel
-    YourGym: "Jouw Gym",
-    SetupRoutine: "Zet een routine van oefeningen op en ontmoet andere mensen!",
-    GymInArea: "Sportschool in uw omgeving",
+    YourGym: "Je gym",
+    Welcome: "Welkom",
+    SetupRoutine: "Maak een routine van oefeningen en ontmoet andere mensen!",
+    GymInArea: "Gym in je omgeving",
+    MyGym: "Mijn gym",
+    FindOthers: " Zoek andere gymders!",
+    FindOthersNow: "Zoek andere mensen nu!",
     AddGymsOthersToSee:
-      "U kunt sportscholen toevoegen die voor anderen zichtbaar zijn.",
-    AddGym: "Voeg nu uw sportschool toe!",
+      "Je kunt gyms toevoegen die zichtbaar zijn voor anderen.",
+    AddGym: "Voeg nu je gym toe!",
     SocializeWithPeople: "Socialiseren met mensen uit je omgeving!",
 
     //LoginLogout
@@ -26,15 +30,89 @@ const DUTCH = {
     LearnMore: "Leer meer!",
 
     //Services
-    OurServices: "Onze diensten",
-    AddOthers: "Voeg andere gym rats toe!",
+    OurServices: "Onze services",
+    WhatDoesGymderDo: " Wat doet Gymder precies voor je?",
+    WhyUseGymder: "Waarom zou je Gymder gebruiken boven andere apps?",
+    AddOthers: "Zoek andere sportliefhebbers!",
+    Integrity: "Integriteit",
+    isOpenSource:
+      "Gymder is open source en zal geen gegevens stelen zonder jouw toestemming",
     AddFriendsDiscoverButton:
-      "Gymder biedt de mogelijkheid om vrienden toe te voegen die naar dezelfde sportschool gaan!",
+      "Gymder biedt de mogelijkheid om vrienden toe te voegen die net als jij graag naar de gym gaan!",
+    Memorizing: "Onthouden",
+    SaveGymList:
+      "Gymder biedt de mogelijkheid om je gyms op te slaan in een lijst zodat je snel hun adres kunt bekijken",
     CheckItOut: "Kijk maar!",
 
+    //Contact
+    ContactUs: "Neem contact met ons op",
+    QuestionContact:
+      "Heb je vragen? Aarzel dan niet om direct contact met ons op te nemen. Ons team neemt binnen enkele uren contact met je op om je te helpen.",
+
+    //MyProfile
+    AddGymProfile: "Voeg je gym toe",
+    Settings: "Instellingen",
+
+    //AuthLanding
+    LoginFail: "Inloggen mislukt",
+    UnableToSignin:
+      "Sorry, we konden je niet aanmelden, de onderstaande fout kan wellicht nuttig zijn. Probeer het opnieuw?",
+
+    //RatingComponent
+    GymNotRatedYet: "Deze gym is nog niet beoordeeld",
+    CurrentRating: "Huidige waardering",
+
+    //GymDetails
+    GymDetails: "Gymgegevens",
+    Name: "Naam:",
+    Email: "E-mail:",
+    Owner: "Eigenaar:",
+    Address: "Adres:",
+    GiveRating: "Geef een waardering",
+    AddGymToYourGym: "Voeg gym toe aan je gymlijst!",
+    GoBack: "Terugkeren",
+
+    //UserDetails
+    About: "Over",
+    PersonalDetails: "Persoonlijke gegevens",
+    FullName: "Volledige naam:",
+    Phone: "Telefoon:",
+    Country: "Land:",
+    State: "Staat:",
+    City: "Stad:",
+
+    NoFullName: "Deze gebruiker heeft zijn volledige naam niet ingevuld",
+    NoPhone: "Deze gebruiker heeft zijn telefoonnummer niet ingevuld",
+    NoEmail: "Deze gebruiker heeft zijn e-mailadres niet ingevuld",
+    NoCountry: "Deze gebruiker heeft zijn land niet ingevuld",
+    NoState: "Deze gebruiker heeft zijn staat niet ingevuld",
+    NoCity: "Deze gebruiker heeft zijn stad niet ingevuld",
+
+    //UserProfile
+    NoProfileFullName: "je hebt geen volledige naam ingevuld",
+    NoProfilePhone: "je hebt geen telefoonnummer ingevuld",
+    NoProfileEmail: "je hebt geen e-mailadres ingevuld",
+    NoProfileCountry: "je hebt geen land ingevuld",
+    NoProfileState: "je hebt geen staat ingevuld",
+    NoProfileCity: "je hebt geen stad ingevuld",
+    NoProfileBio: "je hebt geen bio ingevuld",
+    SetProfile: "Profiel instellen",
+    ClearAll: "Alles wissen",
+
+    //Discover
+    Users: "Gebruikers",
+    Gyms: "Gyms",
+
+    //AddGym
+    AddYourGym: "Voeg je gym toe",
+    GymName: "Gym Naam",
+    Description: "Beschrijving",
+    Cancel: "Annuleren",
+    //myGym
+    NoGymYet: "Je hebt geen gyms toegevoegd",
+    AddThem: "Voeg ze toe!",
     //Navbar
     Home: "Home",
-    About: "Over ons",
     Services: "Diensten",
     Contact: "Contact",
     Discover: "Verken",

@@ -16,6 +16,7 @@ import React, { Fragment, useState } from "react";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
 import { useNavigate } from "react-router-dom";
+import Transl from "../../Translation/i18n/translate";
 
 export default function AuthenticationButton(prop) {
   const { isAuthenticated, user } = useAuth0();
@@ -96,7 +97,7 @@ export default function AuthenticationButton(prop) {
               <Avatar sx={{ width: 32, height: 32 }}>
                 <img src={picture} alt="ProfilePicture" />
               </Avatar>
-              My Gym
+              {Transl("MyGym")}
             </div>
           </MenuItem>
           <MenuItem onClick={() => NavigateTo("/addGym")}>
@@ -104,7 +105,7 @@ export default function AuthenticationButton(prop) {
               <AddCommentIcon fontSize="small" />
             </ListItemIcon>
             <div className="nav-link d-flex" to="/addGym">
-              Add a gym!
+              {Transl("AddGymProfile")}
             </div>
           </MenuItem>
           <Divider />
@@ -113,7 +114,7 @@ export default function AuthenticationButton(prop) {
               <ListItemIcon>
                 <Settings fontSize="small" />
               </ListItemIcon>
-              Settings
+              {Transl("Settings")}
             </div>
           </MenuItem>
           <MenuItem>

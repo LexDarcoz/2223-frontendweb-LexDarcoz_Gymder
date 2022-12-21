@@ -1,16 +1,14 @@
 import RatingComponent from "../../components/tools/RatingComponent";
-
+import Transl from "../../Translation/i18n/translate";
 export default function ContactForm() {
   return (
     <section className="mb-12 mt-4 section-padding vh-100" id="ContactForm">
       <h2 className="h1-responsive font-weight-bold text-center my-4">
-        Contact us
+        {Transl("ContactUs")}
       </h2>
 
       <p className="text-center w-responsive mx-auto mb-5">
-        Do you have any questions? Please do not hesitate to contact us
-        directly. Our team will come back to you within a matter of hours to
-        help you.
+        {Transl("QuestionContact")}
       </p>
 
       <div className="row ">

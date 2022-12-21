@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import Transl from "../../Translation/i18n/translate";
 import GymderLogo from "../../images/logo/GymderLogo.jpg";
 export default function About() {
@@ -12,16 +11,15 @@ export default function About() {
             </div>
           </div>
           <div className="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
-            <div className="about-text">
+            <div className="about-text text-center">
               <h2>
-                {Transl("WeAreGymder")}
-                <br />
-                {Transl("ProvidingGymAssets")}
+                <strong>
+                  {Transl("WeAreGymder")}
+                  <br />
+                  {Transl("ProvidingGymAssets")}
+                </strong>
               </h2>
-              <p>{Transl("AboutGymder")}</p>
-              <Link className="btn btn-warning" to="GymHealth">
-                {Transl("LearnMore")}
-              </Link>
+              <p className="text-center">{Transl("AboutGymder")}</p>
             </div>
           </div>
         </div>

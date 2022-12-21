@@ -1,6 +1,7 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useState } from "react";
 import AuthLanding from "../../components/authentication/AuthLanding";
+import Transl from "../../Translation/i18n/translate";
 import GymList from "./GymList";
 
 import UserList from "./UserList";
@@ -22,16 +23,16 @@ export default function Discover() {
       <div id="UnderNav" className="container w-100 min-vh-100 h-100">
         <span className="d-flex ">
           <button
-            className="ms-0 btn btn-dark"
+            className="ms-0 my-3 btn btn-dark"
             onClick={() => handleClick("user")}
           >
-            Users
+            {Transl("Users")}
           </button>
           <button
-            className="ms-auto btn btn-dark "
+            className="ms-auto my-3 btn btn-dark "
             onClick={() => handleClick("gym")}
           >
-            Gyms
+            {Transl("Gyms")}
           </button>
         </span>
         {isShownUserList ? <GymList /> : <UserList />}

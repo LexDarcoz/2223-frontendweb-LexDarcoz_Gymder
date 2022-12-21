@@ -42,11 +42,13 @@ export default function Carousel() {
           <img alt="..." className="d-block w-100" src={CarouselImg2} />
           {isAuthenticated ? (
             <div className="carousel-caption ">
-              <h5>Welcome {user.name}</h5>
+              <h5>
+                {Transl("Welcome")} {user.name}
+              </h5>
               <p>{Transl("SetupRoutine")}</p>
               <p>
                 <Link className="btn btn-warning" to="myGym">
-                  My gym
+                  {Transl("MyGym")}
                 </Link>
               </p>
             </div>
@@ -76,10 +78,10 @@ export default function Carousel() {
           <img alt="..." className="d-block w-100" src={CarouselImg1} />
           <div className="carousel-caption">
             <h5>{Transl("SocializeWithPeople")}</h5>
-            <p>Find other gymders!</p>
+            <p>{Transl("FindOthers")}</p>
             <p>
               <Link className="btn btn-warning mt-3" to="/discover">
-                Find other people now!
+                {Transl("FindOthersNow")}
               </Link>
             </p>
           </div>

@@ -8,6 +8,7 @@ import "./detailsGym.css";
 import { Rating, Typography } from "@mui/material";
 import useUserGym from "../../../api/userGym";
 import ToolTip from "../../../components/tools/ToolTip";
+import Transl from "../../../Translation/i18n/translate";
 export default function DetailsGym() {
   const { isAuthenticated } = useAuth0();
   const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -76,7 +77,7 @@ export default function DetailsGym() {
                     <h6 className="gym-email">{gym.emailAddress}</h6>
                   </div>
                   <div className="about">
-                    <h5 className="mb-2 text-primary">About</h5>
+                    <h5 className="mb-2 text-primary">{Transl("About")}</h5>
                     <p>
                       {gym.description
                         ? gym.description
@@ -98,13 +99,15 @@ export default function DetailsGym() {
               <div className="card-body">
                 <div className="row gutters">
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <h6 className="mb-3 text-primary">Gym Details</h6>
+                    <h6 className="mb-3 text-primary">
+                      {Transl("GymDetails")}
+                    </h6>
                   </div>
 
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
                       <label>
-                        <strong> Name:</strong>
+                        <strong> {Transl("Name")}</strong>
                       </label>
                       <p>{gym.name}</p>
                     </div>
@@ -112,7 +115,7 @@ export default function DetailsGym() {
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
                       <label>
-                        <strong> Email:</strong>
+                        <strong> {Transl("Email")}</strong>
                       </label>
                       <p>{gym.emailAddress}</p>
                     </div>
@@ -121,7 +124,7 @@ export default function DetailsGym() {
                   <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
                     <div className="form-group">
                       <label>
-                        <strong> Owner:</strong>
+                        <strong> {Transl("Owner")}</strong>
                       </label>
                       <p>{gym.owner}</p>
                     </div>
@@ -130,13 +133,15 @@ export default function DetailsGym() {
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                     <div className="form-group">
                       <label>
-                        <strong> Address:</strong>
+                        <strong> {Transl("Address")}</strong>
                       </label>
-                      <p>{gym.address ? gym.address : "No gym description"}</p>
+                      <p>{gym.address ? gym.address : "No gym address"}</p>
                     </div>
                   </div>
                   <div className="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                    <Typography component="legend">Give rating</Typography>
+                    <Typography component="legend">
+                      {Transl("GiveRating")}
+                    </Typography>
                     <Rating
                       name="simple-controlled"
                       value={value}
@@ -151,13 +156,13 @@ export default function DetailsGym() {
                         className="btn btn-primary  m-2"
                         onClick={() => addGymToUser(gym.id)}
                       >
-                        Add Gym
+                        {Transl("AddGymToYourGym")}
                       </p>
                       <button
                         className="btn btn-primary m-2"
                         onClick={() => navigate("/discover")}
                       >
-                        Go back
+                        {Transl("GoBack")}
                       </button>
                     </div>
                   </div>

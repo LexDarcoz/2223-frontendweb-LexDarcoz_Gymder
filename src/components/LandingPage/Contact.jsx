@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Transl from "../../Translation/i18n/translate";
 
 export default function Contact() {
   return (
@@ -7,7 +8,7 @@ export default function Contact() {
         <div className="row">
           <div className="card bg-dark ">
             <div className="section-header row text-center pb-5">
-              <h2 style={{ color: "#ffc100" }}>Contact Us</h2>
+              <h2 style={{ color: "#ffc100" }}>{Transl("ContactUs")}</h2>
               <p className="text-white">
                 📧
                 <Link to="/contactForm" className="text-center">

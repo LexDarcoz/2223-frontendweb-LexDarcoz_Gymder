@@ -8,16 +8,29 @@ export default function Services() {
         <div className="row">
           <div className="col-md-12">
             <div className="section-header text-center pb-5">
-              <h2>{Transl("OurServices")}</h2>
+              <h2>
+                {" "}
+                <strong> {Transl("OurServices")}</strong>
+              </h2>
               <p>
-                What does gymder exactly do for you?
+                {Transl("WhatDoesGymderDo")}
                 <br />
-                Why use gymder over other apps?
+                {Transl("WhyUseGymder")}
               </p>
             </div>
           </div>
         </div>
         <div className="row">
+          <div className="col-12 col-md-12 col-lg-4">
+            <div className="card text-white text-center bg-dark pb-2">
+              <div className="card-body">
+                <i className="bi bi-intersect"></i>
+                <h3 className="card-title">{Transl("Integrity")}</h3>
+                <p className="lead">{Transl("isOpenSource")}</p>
+              </div>
+            </div>
+          </div>
+
           <div className="col-12 col-md-12 col-lg-4">
             <div className="card text-white text-center bg-dark pb-2">
               <div className="card-body">
@@ -30,32 +43,15 @@ export default function Services() {
               </div>
             </div>
           </div>
-
           <div className="col-12 col-md-12 col-lg-4">
             <div className="card text-white text-center bg-dark pb-2">
               <div className="card-body">
                 <i className="bi bi-journal"></i>
-                <h3 className="card-title">Progression</h3>
-                <p className="lead">
-                  Gymder provides the ability to track progression and make up
-                  your schedule
-                </p>
+                <h3 className="card-title">{Transl("Memorizing")}</h3>
+                <p className="lead">{Transl("SaveGymList")}</p>
                 <Link to="/myGym" className="btn bg-warning text-dark">
-                  Read More
+                  {Transl("CheckItOut")}
                 </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12 col-md-12 col-lg-4">
-            <div className="card text-white text-center bg-dark pb-2">
-              <div className="card-body">
-                <i className="bi bi-intersect"></i>
-                <h3 className="card-title">Integrity</h3>
-                <p className="lead">
-                  Gymder is open source and will not steal data without your
-                  consent
-                </p>
-                <button className="btn bg-warning text-dark">Read More</button>
               </div>
             </div>
           </div>

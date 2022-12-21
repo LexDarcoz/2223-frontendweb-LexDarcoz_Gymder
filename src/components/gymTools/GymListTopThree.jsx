@@ -30,7 +30,9 @@ export default function GymListTopThree() {
         <div className="row">
           <div className="col-md-12">
             <div className="section-header text-center pb-5">
-              <h2>{Transl("TopThree")}</h2>
+              <h2>
+                <strong> {Transl("TopThree")}</strong>
+              </h2>
             </div>
           </div>
         </div>

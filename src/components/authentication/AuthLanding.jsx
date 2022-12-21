@@ -1,5 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { Navigate } from "react-router-dom";
+import Transl from "../../Translation/i18n/translate";
 import Error from "../tools/Error";
 import LoginButton from "./LoginButton";
 
@@ -10,11 +11,8 @@ export default function AuthLanding() {
     <div className="container vh-100 d-flex align-items-center justify-content-center">
       <div className="row">
         <div className="col">
-          <h1>Login failed</h1>
-          <p>
-            Sorry, we were unable to sign you in, the error below might be
-            useful. Try again?
-          </p>
+          <h1>{Transl("LoginFailed")}</h1>
+          <p>{Transl("UnableToSignin")}</p>
           <Error error={error} />
           <LoginButton prop="btn btn-danger" />
         </div>

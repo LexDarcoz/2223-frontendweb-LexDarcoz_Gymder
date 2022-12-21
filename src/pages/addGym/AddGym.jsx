@@ -4,6 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import AuthLanding from "../../components/authentication/AuthLanding";
 import ToolTip from "../../components/tools/ToolTip";
 import { useState } from "react";
+import Transl from "../../Translation/i18n/translate";
 
 export default function AddGym() {
   const gymApi = useGym();
@@ -64,14 +65,16 @@ export default function AddGym() {
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                       <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                        Add your gym!
+                        {Transl("AddYourGym")}
                       </p>
 
                       <form className="mx-1 mx-md-4" onSubmit={addGym}>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-id-card fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label className="form-label">Gym name</label>
+                            <label className="form-label">
+                              {Transl("GymName")}
+                            </label>
                             <input
                               type="text"
                               id="form3Example1c"
@@ -82,7 +85,9 @@ export default function AddGym() {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label className="form-label">E-mail</label>
+                            <label className="form-label">
+                              {Transl("Email")}
+                            </label>
                             <input
                               type="email"
                               required
@@ -95,21 +100,27 @@ export default function AddGym() {
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-user fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label className="form-label">Owner</label>
+                            <label className="form-label">
+                              {Transl("Owner")}
+                            </label>
                             <input type="text" className="form-control" />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-map-marker fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label className="form-label">Address</label>
+                            <label className="form-label">
+                              {Transl("Address")}
+                            </label>
                             <input type="text" className="form-control" />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-address-book fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
-                            <label className="form-label">Description</label>
+                            <label className="form-label">
+                              {Transl("Description")}
+                            </label>
                             <textarea
                               className="form-control"
                               name="AdditionalInfo"
@@ -136,15 +147,18 @@ export default function AddGym() {
                           </div>
                         </div>
 
-                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                          <button type="reset" className="btn btn-secondary">
-                            Cancel
+                        <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4 ">
+                          <button
+                            type="reset"
+                            className="btn btn-secondary p-1"
+                          >
+                            {Transl("Cancel")}
                           </button>
                           <button
                             type="submit"
-                            className="btn btn-primary btn-lg"
+                            className="btn btn-primary btn-lg ms-3 p-1"
                           >
-                            Add Gym
+                            {Transl("AddYourGym")}
                           </button>
 
                           <ToolTip
