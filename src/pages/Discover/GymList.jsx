@@ -16,7 +16,7 @@ export default function GymList() {
   useEffect(() => {
     const fetchGyms = async () => {
       const data = await gymApi.getAll();
-      console.log(data);
+
       setGymList([...data]);
     };
     fetchGyms();

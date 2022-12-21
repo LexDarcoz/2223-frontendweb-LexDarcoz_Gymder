@@ -92,29 +92,29 @@ export default function AuthenticationButton(prop) {
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
         >
           <MenuItem onClick={() => NavigateTo("/myGym")}>
-            <p className="nav-link d-flex" to="/myGym">
+            <div className="nav-link d-flex" to="/myGym">
               <Avatar sx={{ width: 32, height: 32 }}>
                 <img src={picture} alt="ProfilePicture" />
               </Avatar>
               My Gym
-            </p>
+            </div>
           </MenuItem>
           <MenuItem onClick={() => NavigateTo("/addGym")}>
             <ListItemIcon>
               <AddCommentIcon fontSize="small" />
             </ListItemIcon>
-            <p className="nav-link d-flex" to="/addGym">
+            <div className="nav-link d-flex" to="/addGym">
               Add a gym!
-            </p>
+            </div>
           </MenuItem>
           <Divider />
           <MenuItem onClick={() => NavigateTo("/myProfile/settings")}>
-            <p className="nav-link" to="/myProfile/settings">
+            <div className="nav-link" to="/myProfile/settings">
               <ListItemIcon>
                 <Settings fontSize="small" />
               </ListItemIcon>
               Settings
-            </p>
+            </div>
           </MenuItem>
           <MenuItem>
             <ListItemIcon>

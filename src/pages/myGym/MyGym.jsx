@@ -1,6 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useGym from "../../api/Gym";
 import useUserGym from "../../api/userGym";
 import AuthLanding from "../../components/authentication/AuthLanding";
@@ -29,7 +29,6 @@ export default function MyGym() {
   useEffect(() => {
     const fetchGyms = async () => {
       const { data } = await userGymApi.getAll();
-      console.log(data);
       let gymIds = [];
       data.forEach((element) => {
         gymIds.push(element.gymId);
@@ -64,7 +63,17 @@ export default function MyGym() {
         >
           <h1 className="my-auto text-center ">
             You have not added any gyms yet!
+            <p>
+              Add them <Link to="/discover">here</Link>
+            </p>
           </h1>
+
+          <ToolTip
+            open={open}
+            onClose={handleClose}
+            severity="error"
+            message="Removed a gym from your list."
+          />
         </div>
       );
     }
@@ -104,12 +113,6 @@ export default function MyGym() {
   return (
     <>
       <AuthLanding />
-      <ToolTip
-        open={open}
-        onClose={handleClose}
-        severity="error"
-        message="Removed a gym from your list."
-      />
     </>
   );
 }

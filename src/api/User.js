@@ -9,7 +9,7 @@ const useUser = () => {
 
   const getAll = useCallback(async () => {
     const token = await getAccessTokenSilently();
-    console.log(`${token}`);
+
     const { data } = await axios.get(baseUrl, {
       headers: {
         Authorization: `Bearer ${token}`,

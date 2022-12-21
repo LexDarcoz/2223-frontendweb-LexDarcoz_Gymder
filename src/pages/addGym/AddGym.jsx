@@ -122,7 +122,7 @@ export default function AddGym() {
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i
-                            class="fa fa-camera fa-lg me-3 fa-fw"
+                            className="fa fa-camera fa-lg me-3 fa-fw"
                             aria-hidden="true"
                           ></i>
 
