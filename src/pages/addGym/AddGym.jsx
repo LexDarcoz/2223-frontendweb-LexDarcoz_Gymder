@@ -164,6 +164,12 @@ export default function AddGym() {
               </div>
             </div>
           </div>
+          <ToolTip
+            open={open}
+            onClose={handleClose}
+            severity="success"
+            message="Succesfully added a gym!"
+          />
         </div>
       </section>
     );

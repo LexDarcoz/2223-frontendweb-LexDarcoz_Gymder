@@ -5,6 +5,7 @@ import useGym from "../../api/Gym";
 import useUserGym from "../../api/userGym";
 import AuthLanding from "../../components/authentication/AuthLanding";
 import GymCard from "../../components/gymTools/GymCard";
+import ToolTip from "../../components/tools/ToolTip";
 
 export default function MyGym() {
   const userGymApi = useUserGym();
@@ -14,7 +15,17 @@ export default function MyGym() {
   function handleClick(id) {
     return navigate(`/detailsGym/${id}`);
   }
+  const [open, setOpen] = useState(false);
+  const TooltipActivation = () => {
+    setOpen(true);
+  };
 
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
   useEffect(() => {
     const fetchGyms = async () => {
       const { data } = await userGymApi.getAll();
@@ -26,14 +37,19 @@ export default function MyGym() {
 
       const gymPromises = gymIds.map((id) => gymApi.getById(id));
       const gyms = await Promise.all(gymPromises);
-      setGymList(gyms);
+      const updatedGymList = [...gyms].filter(
+        (gym, index, self) => self.findIndex((g) => g.id === gym.id) === index
+      );
+      setGymList(updatedGymList);
     };
 
     fetchGyms();
   }, [gymApi, userGymApi]);
 
   function deleteById(id) {
+    TooltipActivation();
     const updatedGymList = GymList.filter((gym) => gym.id !== id);
+
     setGymList(updatedGymList);
     userGymApi.deleteById(id);
   }
@@ -75,9 +91,25 @@ export default function MyGym() {
               />
             );
           })}
+          <ToolTip
+            open={open}
+            onClose={handleClose}
+            severity="error"
+            message="Removed a gym from your list."
+          />
         </div>
       </div>
     );
   }
-  return <AuthLanding />;
+  return (
+    <>
+      <AuthLanding />
+      <ToolTip
+        open={open}
+        onClose={handleClose}
+        severity="error"
+        message="Removed a gym from your list."
+      />
+    </>
+  );
 }

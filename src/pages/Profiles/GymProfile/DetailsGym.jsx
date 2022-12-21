@@ -7,6 +7,7 @@ import AuthLanding from "../../../components/authentication/AuthLanding";
 import "./detailsGym.css";
 import { Rating, Typography } from "@mui/material";
 import useUserGym from "../../../api/userGym";
+import ToolTip from "../../../components/tools/ToolTip";
 export default function DetailsGym() {
   const { isAuthenticated } = useAuth0();
   const baseUrl = process.env.REACT_APP_BASE_URL;
@@ -24,6 +25,19 @@ export default function DetailsGym() {
       setTimeout(waitForElement, 50);
     }
   }
+  const [open, setOpen] = useState(false);
+
+  const TooltipActivation = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
+
   useEffect(() => {
     const fetchGyms = async () => {
       const data = await gymApi.getById(id);
@@ -33,6 +47,7 @@ export default function DetailsGym() {
   }, [id, gymApi]);
 
   function addGymToUser(gymId) {
+    TooltipActivation();
     userGymApi.save(gymId);
   }
 
@@ -151,6 +166,12 @@ export default function DetailsGym() {
             </div>
           </div>
         </div>
+        <ToolTip
+          open={open}
+          onClose={handleClose}
+          severity="success"
+          message="Succesfully added a gym to your page!"
+        />
       </form>
     );
   }
