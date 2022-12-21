@@ -9,6 +9,7 @@ const useGym = () => {
 
   const getAll = useCallback(async () => {
     const token = await getAccessTokenSilently();
+
     const { data } = await axios.get(baseUrl, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -36,13 +37,14 @@ const useGym = () => {
       const token = await getAccessTokenSilently();
 
       const { id, ...values } = gym;
-
+      console.log(values);
       await axios({
         method: "POST",
         url: baseUrl,
         data: values,
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "multipart/form-data",
         },
       });
     },
