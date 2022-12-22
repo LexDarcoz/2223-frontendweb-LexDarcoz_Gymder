@@ -8,19 +8,6 @@
   font-family: "Poppins", sans-serif;
 }
 
-.navbar {
-  position: fixed;
-  top: 0;
-  z-index: 99999;
-  padding: 10px 0;
-  margin-bottom: 0px;
-}
-.navbar .logo {
-  font-size: 1.5em;
-  text-transform: uppercase;
-  font-weight: 750;
-  letter-spacing: 2px;
-}
 .navbar ul.nav {
   margin-right: 15%;
 }

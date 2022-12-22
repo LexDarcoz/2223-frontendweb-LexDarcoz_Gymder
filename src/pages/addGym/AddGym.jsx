@@ -47,15 +47,12 @@ export default function AddGym() {
   if (isAuthenticated) {
     return (
       <section
-        className="min-vh-100 mb-3 h-100 container"
+        className="mb-5"
         id="UnderNav"
         style={{ backgroundcolor: " #eee" }}
       >
         <div>
-          <div
-            id="UnderNav"
-            className="row d-flex justify-content-center align--center  h-100 "
-          >
+          <div className="row d-flex justify-content-center align--center ">
             <div className="col-lg-12 col-xl-11 mt-4 ">
               <div
                 className="text-white bg-dark bg-gradient"
@@ -64,11 +61,17 @@ export default function AddGym() {
                 <div className="card-body p-md-4 ">
                   <div className="row justify-content-center">
                     <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                      <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                      <p
+                        data-cy="AddGym"
+                        className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4"
+                      >
                         {Transl("AddYourGym")}
                       </p>
 
-                      <form className="mx-1 mx-md-4" onSubmit={addGym}>
+                      <form
+                        className="mx-1 mx-md-4 container"
+                        onSubmit={addGym}
+                      >
                         <div className="d-flex flex-row align-items-center mb-4">
                           <i className="fas fa-id-card fa-lg me-3 fa-fw"></i>
                           <div className="form-outline flex-fill mb-0">
@@ -79,6 +82,7 @@ export default function AddGym() {
                               type="text"
                               id="form3Example1c"
                               className="form-control"
+                              data-cy="name_input"
                             />
                           </div>
                         </div>
@@ -94,6 +98,7 @@ export default function AddGym() {
                               pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$"
                               id="form3Example3c"
                               className="form-control"
+                              data-cy="email_input"
                             />
                           </div>
                         </div>
@@ -103,7 +108,11 @@ export default function AddGym() {
                             <label className="form-label">
                               {Transl("Owner")}
                             </label>
-                            <input type="text" className="form-control" />
+                            <input
+                              type="text"
+                              className="form-control"
+                              data-cy="owner_input"
+                            />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -112,7 +121,11 @@ export default function AddGym() {
                             <label className="form-label">
                               {Transl("Address")}
                             </label>
-                            <input type="text" className="form-control" />
+                            <input
+                              type="text"
+                              className="form-control"
+                              data-cy="address_input"
+                            />
                           </div>
                         </div>
                         <div className="d-flex flex-row align-items-center mb-4">
@@ -128,6 +141,7 @@ export default function AddGym() {
                               rows="4"
                               type="text"
                               style={{ color: "black" }}
+                              data-cy="description_input"
                             ></textarea>
                           </div>
                         </div>
@@ -157,6 +171,7 @@ export default function AddGym() {
                           <button
                             type="submit"
                             className="btn btn-primary btn-lg ms-3 p-1"
+                            data-cy="submit_addgym"
                           >
                             {Transl("AddYourGym")}
                           </button>

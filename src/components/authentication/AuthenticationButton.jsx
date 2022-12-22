@@ -51,7 +51,11 @@ export default function AuthenticationButton(prop) {
               aria-expanded={open ? "true" : undefined}
             >
               <Avatar sx={{ width: 32, height: 32 }}>
-                <img src={picture} alt="ProfilePicture" />
+                <img
+                  src={picture}
+                  alt="ProfilePicture"
+                  data-cy="OpenMenuButton"
+                />
               </Avatar>
             </IconButton>
           </Tooltip>
@@ -91,11 +95,16 @@ export default function AuthenticationButton(prop) {
           }}
           transformOrigin={{ horizontal: "right", vertical: "top" }}
           anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+          cy-data="OpenMenuButton"
         >
           <MenuItem onClick={() => NavigateTo("/myGym")}>
             <div className="nav-link d-flex" to="/myGym">
               <Avatar sx={{ width: 32, height: 32 }}>
-                <img src={picture} alt="ProfilePicture" />
+                <img
+                  src={picture}
+                  alt="ProfilePicture"
+                  cy-data="OpenMenuButton"
+                />
               </Avatar>
               {Transl("MyGym")}
             </div>

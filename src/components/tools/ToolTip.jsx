@@ -8,7 +8,12 @@ const Alert = React.forwardRef(function Alert(props, ref) {
 
 export default function ToolTip(prop) {
   return (
-    <Snackbar open={prop.open} autoHideDuration={6000} onClose={prop.onClose}>
+    <Snackbar
+      data-cy="SnackBar"
+      open={prop.open}
+      autoHideDuration={6000}
+      onClose={prop.onClose}
+    >
       <Alert onClose={prop.onClose} severity={prop.severity}>
         {prop.message}
       </Alert>

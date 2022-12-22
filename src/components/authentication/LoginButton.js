@@ -7,7 +7,12 @@ function LoginButton({ prop }) {
     loginWithRedirect();
   }, [loginWithRedirect]);
   return (
-    <button type="button" className={prop} onClick={handleLogin}>
+    <button
+      data-cy="Login_Button"
+      type="button"
+      className={prop}
+      onClick={handleLogin}
+    >
       {Transl("JoinToday")}
     </button>
   );

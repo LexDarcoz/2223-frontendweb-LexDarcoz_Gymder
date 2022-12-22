@@ -18,9 +18,7 @@
 
 Het idee bij het project was een applicatie waar mensen die veel fitnessen gyms op kunnen toevoegen. Deze mensen zouden ook uiteindelijk de optie hebben om een gym toe te treden. Je zou ook gemakkelijk andere mensen kunnen vinden die een account hebben gemaakt op de site en deze dus vinden. Hieronder vindt u een EERD van het project.
 
-![EERD](https://i.gyazo.com/b178c2159d10289cb58861f81dc1e389.png "EERD")
-
-> Omschrijf hier duidelijk waarover jouw project gaat. Voeg een domeinmodel (of EERD) toe om jouw entiteiten te verduidelijken.
+![EERD](https://i.gyazo.com/2855788c0a026da6b6136af1c67041f7.png "EERD")
 
 ## Screenshots
 
@@ -40,13 +38,17 @@ How we can add a gym with images to website:
 ![Adding a gym](https://i.gyazo.com/10dcf3addded47695e64db0335c2d65d.gif "Adding gym")
 
 Add the created gym to user:
-![Change Languages](https://i.gyazo.com/05cb8fd63b59b78cb39b16d49738d96a.gif "Change Languages")
+![Add the created gym to user](https://i.gyazo.com/05cb8fd63b59b78cb39b16d49738d96a.gif "Add the created gym to user")
 
 How we can check users and details of a user:
-![Checking users & details through carousel](https://i.gyazo.com/754dc751ec501228bdc07f54575d87d3.gif "Check users through carousel")
+![How we can check users and details of a user](https://i.gyazo.com/754dc751ec501228bdc07f54575d87d3.gif "How we can check users and details of a user")
 
 How we can check the gym details:
-![Checking users & details through carousel](https://i.gyazo.com/17f8c6f71a2427f3639162b1cbd1c2df.gif "Check users through carousel")
+![How we can check the gym details](https://i.gyazo.com/17f8c6f71a2427f3639162b1cbd1c2df.gif "How we can check the gym details")
+
+Login & is not authenticated warning
+![Not authenticated warning](https://i.gyazo.com/703c39041236e333f4af39a7d15b9e76.gif "Not authenticated warning")
+![Login, no error](https://i.gyazo.com/6583937fc96921f320cca113c7fb6bbd.gif "Login, no error")
 
 ## Behaalde minimumvereisten
 
@@ -145,6 +147,8 @@ Ik heb als extra technologiëen [i18n](https://www.npmjs.com/package/i18n) & [MU
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
 ### Web Services
+
+Ik heb [MULTER](https://www.npmjs.com/package/multer) gebruikt als extra technologie zodat users een logo zouden kunnen toevoegen bij een gym dat ze toevoegen. 
 
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 

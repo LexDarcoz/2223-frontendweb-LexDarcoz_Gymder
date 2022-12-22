@@ -17,6 +17,7 @@ export default function LanguageSetter(props) {
   return (
     <FormControl>
       <Select
+        data-cy="LanguageButton"
         label="Select a language"
         defaultValue="en"
         size="small"
@@ -26,7 +27,11 @@ export default function LanguageSetter(props) {
         <MenuItem value="en" onClick={() => languageFunct(LOCALES.ENGLISH)}>
           <span className="fi fi-us"></span>
         </MenuItem>
-        <MenuItem value="nl" onClick={() => languageFunct(LOCALES.DUTCH)}>
+        <MenuItem
+          value="nl"
+          data-cy="DutchSelection"
+          onClick={() => languageFunct(LOCALES.DUTCH)}
+        >
           <span className="fi fi-nl "></span>
         </MenuItem>
         <MenuItem value="fr" onClick={() => languageFunct(LOCALES.FRENCH)}>

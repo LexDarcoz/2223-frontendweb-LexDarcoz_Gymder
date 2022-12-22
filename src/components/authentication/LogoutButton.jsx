@@ -10,7 +10,12 @@ function LogoutButton() {
   }
 
   return (
-    <button type="button" className="btn btn-danger" onClick={handleClick}>
+    <button
+      type="button"
+      data-cy="LogOut_Button"
+      className="btn btn-danger"
+      onClick={handleClick}
+    >
       {Transl("LogOut")}
     </button>
   );

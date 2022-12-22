@@ -25,7 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 Cypress.Commands.add("goToHomePage", () => {
-  console.log(Cypress.env("auth_username"));
   cy.visit("http://localhost:3000/");
 });
 
@@ -42,7 +41,6 @@ Cypress.Commands.add("login", () => {
   const audience = Cypress.env("auth_audience");
   const scope = "openid profile email offline_access";
 
-  console.log(Cypress.env("auth_username"));
   cy.request({
     method: "POST",
     url: Cypress.env("auth_url"),
@@ -92,10 +90,7 @@ Cypress.Commands.add("login", () => {
 });
 
 Cypress.Commands.add("logout", () => {
-  Cypress.log({
-    displayName: "logout",
-  });
   cy.goToHomePage();
-  cy.get("[data-cy=account_btn]").click();
-  cy.get("[data-cy=logout_btn]").click();
+  cy.get("[data-cy=OpenMenuButton]").click();
+  cy.get("[data-cy=LogOut_Button]").click();
 });

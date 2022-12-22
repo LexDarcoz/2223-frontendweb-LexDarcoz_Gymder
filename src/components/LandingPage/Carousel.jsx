@@ -101,6 +101,7 @@ export default function Carousel() {
         data-bs-slide="next"
         data-bs-target="#carouselExampleIndicators"
         type="button"
+        data-cy="NextCarousel"
       >
         <span aria-hidden="true" className="carousel-control-next-icon"></span>{" "}
         <span className="visually-hidden">Next</span>
