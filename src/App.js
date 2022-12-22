@@ -16,12 +16,10 @@ import ScrollToTop from "./components/tools/ScrollToTop";
 import Settings from "./pages/settings/Settings";
 import DetailsGym from "./pages/Profiles/GymProfile/DetailsGym";
 import DetailsUser from "./pages/Profiles/UserProfiles/DetailsUser";
-import { useAuth0 } from "@auth0/auth0-react";
 export const ThemeContext = createContext(null);
 
 function App() {
   const [locale, setLocale] = useState(LOCALES.ENGLISH);
-  const { isAuthenticated } = useAuth0();
   function languageFunct(language) {
     setLocale(language);
   }

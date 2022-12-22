@@ -11,15 +11,13 @@
 Ik verwacht dat volgende software reeds geïnstalleerd is:
 
 - [NodeJS](https://nodejs.org)
-- [Yarn](https://yarnpkg.com)
+- [NPM](https://www.npmjs.com/package/npm)
 - [MySQL Community Server](https://dev.mysql.com/downloads/mysql/)
 - ...
 
-> Vul eventueel aan
-
 ## Opstarten
 
-> Schrijf hier hoe we de applicatie starten (.env bestanden aanmaken, commando's om uit te voeren...)
+Npm start om de development op te starten. Npm start:prod start de production environment op.
 
 ## Testen
 
