@@ -16,7 +16,8 @@ Ik verwacht dat volgende software reeds geïnstalleerd is:
 ## Opstarten
 
 Om alle dependencies te installeren run je eerst npm install, hierna kan je npm start uitvoeren om de development environment op te starten.
-ENV file moet volgende informatie bevatten:
+
+##### .env file
 
 ```bash
 REACT_APP_AUTH0_DOMAIN ="domain"
@@ -35,7 +36,9 @@ REACT_APP_BASE_URL="http://localhost:9000"
 
 npx cypress open
 
-##### env file
+##### env file test
+
+cypress.env.json:
 
 ```bash
 "auth_audience": "Audience",
