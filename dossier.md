@@ -22,6 +22,8 @@ Het idee bij het project was een applicatie waar mensen die veel fitnessen gyms 
 
 ## Screenshots
 
+[Bekijk hier de repo markdown om de gifs te laten werken!](https://github.com/Web-IV/2223-frontendweb-LexDarcoz/blob/main/dossier.md)
+
 How we can change languages:
 ![Change Languages](https://i.gyazo.com/3125373641e5af3beae18b857ad6664e.gif "Change Languages")
 
@@ -83,7 +85,7 @@ Login & is not authenticated warning
         <br />
 
 - **varia**
-  - [ ] een aantal niet-triviale testen (unit en/of e2e en/of ui)
+  - [x] een aantal niet-triviale testen (unit en/of e2e en/of ui)
   - [x] minstens één extra technologie
   - [x] duidelijke en volledige README.md
   - [x] volledig en tijdig ingediend dossier
@@ -120,7 +122,7 @@ Login & is not authenticated warning
         <br />
 
 - **varia**
-  - [ ] een aantal niet-triviale testen (min. 1 controller >=80% coverage)
+  - [x] een aantal niet-triviale testen (min. 1 controller >=80% coverage)
   - [x] minstens één extra technologie
   - [x] duidelijke en volledige `README.md`
   - [x] maakt gebruik van de laatste ES6-features (object destructuring, spread operator...)
@@ -136,7 +138,7 @@ Voor het ontwerp van mijn componenten heb ik gebruik gemaakt van het "presentati
 
 ### Web Services
 
-In de src map vindt u /core, /data, /repository, /rest & /service. De core bevat hulpbestanden die errors loggen zoals logging. De data map is verantwoordelijk voor de connectie met de database & voor het doorvoeren van seeds en aanmaken van tables. Repository zorgt voor de communicatie tussen backend en database. Rest is de communicatie met front-end en vangt requests op en stuurt gevraagde data indien nodig door adhv posts/gets. Service bevat de domeinLogica
+In de src map vindt u /core, /data, /repository, /rest & /service. De core bevat hulpbestanden die errors loggen zoals logging. De data map is verantwoordelijk voor de connectie met de database & voor het doorvoeren van seeds en aanmaken van tables. Repository zorgt voor de communicatie tussen backend en database. Rest is de communicatie met front-end en vangt requests op en stuurt gevraagde data indien nodig door adhv posts/gets. Service bevat de domein logica.
 
 ## Extra technologie
 
@@ -148,7 +150,7 @@ Ik heb als extra technologiëen [i18n](https://www.npmjs.com/package/i18n) & [MU
 
 ### Web Services
 
-Ik heb [MULTER](https://www.npmjs.com/package/multer) gebruikt als extra technologie zodat users een logo zouden kunnen toevoegen bij een gym dat ze toevoegen. 
+Ik heb [MULTER](https://www.npmjs.com/package/multer) gebruikt als extra technologie zodat users een logo zouden kunnen toevoegen bij een gym dat ze toevoegen. Het is de bedoeling dat een user een file kan uploaden in de frontend, deze file wordt bijgehouden in de backend zodat deze gemakkelijk op te halen is. De naam van de file wordt opgeslagen
 
 > Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
@@ -156,11 +158,28 @@ Ik heb [MULTER](https://www.npmjs.com/package/multer) gebruikt als extra technol
 
 ### Front-end Web Development
 
+LoginTest
+MakeGymTest
+TranslationTest
+
+Logintest gaat na of user ingelogd is nadat ze de website inladen en bepaalde knoppen indrukken.
+
+MakeGymtest kijkt of het lukt om een gym succesfully toe te voegen.
+
+Translationtest kijkt of de pagina daadwerkelijk vertaald wordt nadat er op een andere taal geklikt wordt.
+
 > Schrijf hier een korte oplijsting en beschrijving van de geschreven testen
 
 ### Web Services
 
 > Schrijf hier een korte oplijsting en beschrijving van de geschreven testen + voeg een screenshot van de coverage en uitvoering toe
+
+Ik heb userGym met al zijn functionaliteiten getest, dit zijn delete
+
+Coverage:
+[![Image from Gyazo](https://i.gyazo.com/ffc8d0efc18e603350022cceddd45746.png)](https://gyazo.com/ffc8d0efc18e603350022cceddd45746)
+
+[![Image from Gyazo](https://i.gyazo.com/b775f96d3832658a8ff8231913b9b186.png)](https://gyazo.com/b775f96d3832658a8ff8231913b9b186)
 
 ## Gekende bugs
 
@@ -168,14 +187,14 @@ Ik heb [MULTER](https://www.npmjs.com/package/multer) gebruikt als extra technol
 
 > Zijn er gekende bugs?
 
+User profile wordt niet meteen geupdate, page refresh is required.
+
 ### Web Services
 
 > Zijn er gekende bugs?
 
+images worden in het ram geheugen opgeslagen op render. Hierdoor blijven images niet voor altijd.
+
 ### Front-end Web Development
 
-- Dit en dat
-
-### Web Services
-
-- Oh en dit ook
+- Ik was ook van plan give rating toe te voegen maar heb dit uiteindelijk niet gedaan om meer tijd te hebben voor andere examens. U kunt bij gym details een give rating component vinden, deze werkt dus niet in de backend. Enkel visueel voor de user.
