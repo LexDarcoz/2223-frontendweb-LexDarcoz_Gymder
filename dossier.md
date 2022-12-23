@@ -146,33 +146,27 @@ In de src map vindt u /core, /data, /repository, /rest & /service. De core bevat
 
 Ik heb als extra technologiëen [i18n](https://www.npmjs.com/package/i18n) & [MUI](https://mui.com/material-ui/getting-started/installation/) gebruikt om mijn website te translaten en beter te stylen. Ik heb een multi-language site gecreëerd met talen zoals Frans, Engels en Nederlands. Met MUI heb ik een aantal coole features kunnen toevoegen zoals snackbars, dropdown menus etc.
 
-> Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
-
 ### Web Services
 
 Ik heb [MULTER](https://www.npmjs.com/package/multer) gebruikt als extra technologie zodat users een logo zouden kunnen toevoegen bij een gym dat ze toevoegen. Het is de bedoeling dat een user een file kan uploaden in de frontend, deze file wordt bijgehouden in de backend zodat deze gemakkelijk op te halen is. De naam van de file wordt opgeslagen
-
-> Wat is de extra technologie? Hoe werkt het? Voeg een link naar het npm package toe!
 
 ## Testresultaten
 
 ### Front-end Web Development
 
-LoginTest
-MakeGymTest
-TranslationTest
+##### LoginTest
 
 Logintest gaat na of user ingelogd is nadat ze de website inladen en bepaalde knoppen indrukken.
 
+##### MakeGymTest
+
 MakeGymtest kijkt of het lukt om een gym succesfully toe te voegen.
+
+##### TranslationTest
 
 Translationtest kijkt of de pagina daadwerkelijk vertaald wordt nadat er op een andere taal geklikt wordt.
 
-> Schrijf hier een korte oplijsting en beschrijving van de geschreven testen
-
 ### Web Services
-
-> Schrijf hier een korte oplijsting en beschrijving van de geschreven testen + voeg een screenshot van de coverage en uitvoering toe
 
 Ik heb userGym met al zijn functionaliteiten getest, dit zijn delete
 
